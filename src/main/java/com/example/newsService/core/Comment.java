@@ -1,4 +1,4 @@
-package com.example.newsService.core;
+ package com.example.newsService.core;
 
 public class Comment {
 
