@@ -1,0 +1,146 @@
+package com.example.newsService.unit.repositories;
+
+import com.example.newsService.core.post.entities.PostEntity;
+import com.example.newsService.core.repositories.entity.EntityPostRepository;
+import com.example.newsService.infra.repositories.JpaPostRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
+
+public class JpaPostRepositoryTest {
+
+    @Mock
+    private EntityPostRepository repository;
+
+    @InjectMocks
+    private JpaPostRepository postRepository;
+
+    private PostEntity post;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        // Создаем тестовый объект PostEntity
+        post = new PostEntity(
+                UUID.randomUUID(),
+                "Test Title",
+                "Test Content",
+                LocalDateTime.now(),
+                LocalDateTime.now(),
+                0L,
+                0L,
+                false,
+                "user123"
+        );
+    }
+
+    @Test
+    void testAddPost() {
+        // Мокируем вызов save в репозитории
+        when(repository.save(post)).thenReturn(post);
+
+        // Сохраняем пост в репозитории
+        postRepository.addPost(post);
+
+        // Проверяем, что метод save был вызван
+        verify(repository, times(1)).save(post);
+    }
+
+    @Test
+    void testGetPost() {
+        // Мокируем вызов findById в репозитории
+        when(repository.findById(post.getId())).thenReturn(Optional.of(post));
+
+        // Ищем пост через репозиторий
+        PostEntity foundPost = postRepository.getPost(post.getId());
+
+        // Проверяем, что пост был найден
+        assertThat(foundPost).isNotNull();
+        assertThat(foundPost.getContent()).isEqualTo("Test Content");
+
+        // Проверяем, что метод findById был вызван
+        verify(repository, times(1)).findById(post.getId());
+    }
+
+    @Test
+    void testUpdatePost() {
+        // Мокируем вызов save в репозитории
+        when(repository.save(post)).thenReturn(post);
+
+        // Обновляем данные поста
+        post.setTitle("Updated Title");
+        postRepository.updatePost(post);
+
+        // Проверяем, что метод save был вызван
+        verify(repository, times(1)).save(post);
+    }
+
+    @Test
+    void testDeletePost() {
+        // Arrange
+        UUID postId = post.getId();
+
+        // Mock the existsById method to return true
+        when(repository.existsById(postId)).thenReturn(true);
+
+        // Mock the deleteById method to do nothing
+        doNothing().when(repository).deleteById(postId);
+
+        // Act
+        postRepository.deletePost(postId);
+
+        // Assert
+        verify(repository, times(1)).existsById(postId);
+        verify(repository, times(1)).deleteById(postId);
+    }
+
+    @Test
+    void testGetAllPosts() {
+        // Создаем несколько постов
+        PostEntity post1 = new PostEntity(
+                UUID.randomUUID(),
+                "Title 1",
+                "Content 1",
+                LocalDateTime.now(),
+                LocalDateTime.now(),
+                0L,
+                0L,
+                false,
+                "user123"
+        );
+        PostEntity post2 = new PostEntity(
+                UUID.randomUUID(),
+                "Title 2",
+                "Content 2",
+                LocalDateTime.now(),
+                LocalDateTime.now(),
+                0L,
+                0L,
+                false,
+                "user456"
+        );
+
+        // Мокируем вызов findAll в репозитории
+        when(repository.findAll()).thenReturn(List.of(post1, post2));
+
+        // Получаем все посты через репозиторий
+        List<PostEntity> posts = postRepository.getAllPosts();
+
+        // Проверяем, что все посты были найдены
+        assertThat(posts).hasSize(2);
+        assertThat(posts).extracting(PostEntity::getTitle).containsExactlyInAnyOrder("Title 1", "Title 2");
+
+        // Проверяем, что метод findAll был вызван
+        verify(repository, times(1)).findAll();
+    }
+}
