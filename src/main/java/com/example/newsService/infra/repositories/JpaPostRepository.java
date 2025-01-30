@@ -3,6 +3,7 @@ package com.example.newsService.infra.repositories;
 import com.example.newsService.core.post.entities.PostEntity;
 import com.example.newsService.core.repositories.PostRepository;
 import com.example.newsService.core.repositories.entity.EntityPostRepository;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -11,15 +12,12 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
+@RequiredArgsConstructor
 public class JpaPostRepository implements PostRepository {
 
     private final static Logger logger = LoggerFactory.getLogger(JpaPostRepository.class);
 
     private final EntityPostRepository repository;
-
-    public JpaPostRepository(EntityPostRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public void addPost(PostEntity post) {

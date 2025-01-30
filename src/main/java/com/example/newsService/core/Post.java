@@ -4,11 +4,18 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @MappedSuperclass
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder(toBuilder = true)
+@ToString
 public class Post {
 
     @Id
@@ -31,112 +38,4 @@ public class Post {
     @Column(name = "user_id")
     private String userId;
 
-    public Post(UUID id,
-                String title,
-                String content,
-                LocalDateTime createdAt,
-                LocalDateTime updatedAt,
-                Long likeQuantity,
-                Long commentQuantity,
-                boolean isPrivate,
-                String userId) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.likeQuantity = likeQuantity;
-        this.commentQuantity = commentQuantity;
-        this.isPrivate = isPrivate;
-        this.userId = userId;
-    }
-
-    public Post() {
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Long getLikeQuantity() {
-        return likeQuantity;
-    }
-
-    public void setLikeQuantity(Long likeQuantity) {
-        this.likeQuantity = likeQuantity;
-    }
-
-    public Long getCommentQuantity() {
-        return commentQuantity;
-    }
-
-    public void setCommentQuantity(Long commentQuantity) {
-        this.commentQuantity = commentQuantity;
-    }
-
-    public boolean isPrivate() {
-        return isPrivate;
-    }
-
-    public void setPrivate(boolean aPrivate) {
-        isPrivate = aPrivate;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", likeQuantity=" + likeQuantity +
-                ", commentQuantity=" + commentQuantity +
-                ", isPrivate=" + isPrivate +
-                '}';
-    }
 }

@@ -3,24 +3,20 @@ package com.example.newsService.infra.repositories;
 import com.example.newsService.core.like.entities.post.PostLikes;
 import com.example.newsService.core.repositories.PostLikesRepository;
 import com.example.newsService.core.repositories.entity.EntityPostLikesRepository;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
+@RequiredArgsConstructor
 public class JpaPostLikesRepository implements PostLikesRepository {
 
     private final static Logger logger = LoggerFactory.getLogger(JpaPostLikesRepository.class);
 
     private final EntityPostLikesRepository repository;
-
-    @Autowired
-    public JpaPostLikesRepository(EntityPostLikesRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public void addPostLike(PostLikes postLikes) {

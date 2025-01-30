@@ -5,12 +5,16 @@ import com.example.newsService.core.comment.entities.CommentEntity;
 import com.example.newsService.core.like.entities.post.PostLikes;
 import com.example.newsService.core.mediafile.entities.post.MediafilePost;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+
 @Entity
 @Table(name = "t_post")
+@Getter
+@Setter
 public class PostEntity extends Post {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY, mappedBy = "post")
@@ -35,6 +39,6 @@ public class PostEntity extends Post {
     }
 
     public PostEntity() {
-    }
 
+    }
 }

@@ -3,25 +3,21 @@ package com.example.newsService.infra.repositories;
 import com.example.newsService.core.comment.entities.CommentEntity;
 import com.example.newsService.core.repositories.CommentRepository;
 import com.example.newsService.core.repositories.entity.EntityCommentRepository;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.UUID;
 
 @Repository
+@RequiredArgsConstructor
 public class JpaCommentRepository implements CommentRepository {
 
     private final static Logger logger = LoggerFactory.getLogger(JpaCommentRepository.class);
 
     private final EntityCommentRepository repository;
-
-    @Autowired
-    public JpaCommentRepository(EntityCommentRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public void addComment(CommentEntity comment) {

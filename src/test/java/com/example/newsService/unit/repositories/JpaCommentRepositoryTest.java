@@ -36,7 +36,6 @@ public class JpaCommentRepositoryTest {
                 LocalDateTime.now(),
                 LocalDateTime.now(),
                 0L,
-                0L,
                 "user123"
         );
     }

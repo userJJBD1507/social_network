@@ -7,6 +7,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
@@ -24,5 +27,4 @@ public class MediafilePost extends Mediafile {
 
     public MediafilePost() {
     }
-
 }

@@ -18,6 +18,7 @@ public class MediafileComment extends Mediafile {
     @JoinColumn(name = "comment_id")
     private CommentEntity comment;
 
+
     public MediafileComment(UUID id, String url, String userId, MediaFileType type) {
         super(id, url, userId, type);
     }
