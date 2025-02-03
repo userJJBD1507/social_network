@@ -1,4 +1,16 @@
 package com.example.newsService.core.mediafile.entities;
 
-public class MediafileEntity {
+import com.example.newsService.core.Mediafile;
+import com.example.newsService.core.post.entities.PostEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class MediafileEntity extends Mediafile {
+
+    @ManyToOne
+    @JoinColumn(name = "post_id", nullable = false)
+    private PostEntity post;
+
 }
