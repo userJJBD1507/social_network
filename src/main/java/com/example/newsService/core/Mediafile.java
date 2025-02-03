@@ -14,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Mediafile {
+public class Mediafile extends BaseEntityAudit {
 
     @Id
     @GeneratedValue
@@ -22,7 +22,7 @@ public class Mediafile {
     @Column(name = "url")
     private String url;
     @Column(name = "user_id")
-    private String userId;
+    private UUID userId;
     @Enumerated(EnumType.STRING)
     private MediaFileType type;
 
