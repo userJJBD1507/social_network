@@ -1,5 +1,29 @@
 package com.example.newsService.core;
 
-public class Mediafile {
+import com.example.newsService.core.utils.MediaFileType;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@MappedSuperclass
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Mediafile extends BaseEntityAudit {
+
+    @Id
+    @GeneratedValue
+    private UUID id;
+    @Column(name = "url")
+    private String url;
+    @Column(name = "user_id")
+    private UUID userId;
+    @Enumerated(EnumType.STRING)
+    private MediaFileType type;
 
 }

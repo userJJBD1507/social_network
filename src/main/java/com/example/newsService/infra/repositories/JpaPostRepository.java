@@ -1,5 +1,5 @@
 package com.example.newsService.infra.repositories;
 
-public class JpaPostRepository {
+public class JpaPostRepository  {
 
 }
