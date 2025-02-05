@@ -18,7 +18,7 @@ import com.example.newsService.infra.repositories.JpaMediafileRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
-// @Service
+// @Service 
 // public class MediafileService implements MediafileCrud<MediafileEntity, UUID> {
 
 //     private static final Logger logger = LoggerFactory.getLogger(MediafileService.class);
