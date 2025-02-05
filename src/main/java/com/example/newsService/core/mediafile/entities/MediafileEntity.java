@@ -18,7 +18,7 @@ import lombok.Setter;
 public class MediafileEntity extends Mediafile {
 
     @ManyToOne
-    @JoinColumn(name = "post_id", nullable = false)
+    @JoinColumn(name = "post_id")
     private PostEntity post;
 
 }

@@ -2,6 +2,7 @@ package com.example.newsService.presentation.api;
 
 import com.example.newsService.app.DTO.ReactionDTO;
 import com.example.newsService.app.services.ReactionService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +12,10 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/reactions")
+@RequiredArgsConstructor
 public class ReactionController {
 
     private final ReactionService reactionService;
-
-    @Autowired
-    public ReactionController(ReactionService reactionService) {
-        this.reactionService = reactionService;
-    }
 
     @PostMapping
     public ResponseEntity<Void> addReaction(@RequestBody ReactionDTO reactionDTO) {
