@@ -1,6 +1,6 @@
 package com.example.newsService.app.DTO;
 
-import com.example.newsService.core.utils.MediaFileType;
+import com.example.newsService.core.utils.ReactionType;
 
 import lombok.*;
 
@@ -9,6 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MediafileDTO {
-    private MediaFileType type;
+public class ReactionDTO {
+    private ReactionType reaction;
 }

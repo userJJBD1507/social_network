@@ -4,10 +4,18 @@ import com.example.newsService.core.Post;
 import com.example.newsService.core.mediafile.entities.MediafileEntity;
 import com.example.newsService.core.reaction.entities.UserReactionEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "posts")
 public class PostEntity extends Post {

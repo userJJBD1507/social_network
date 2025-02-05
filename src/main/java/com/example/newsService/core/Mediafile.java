@@ -21,8 +21,6 @@ public class Mediafile extends BaseEntityAudit {
     private UUID id;
     @Column(name = "url")
     private String url;
-    @Column(name = "user_id")
-    private UUID userId;
     @Enumerated(EnumType.STRING)
     private MediaFileType type;
 
