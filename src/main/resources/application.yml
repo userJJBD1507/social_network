@@ -12,7 +12,12 @@ spring:
     hibernate:
       ddl-auto: update
 
-
-
 server:
-  port:8001
+  port: 8001
+
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
