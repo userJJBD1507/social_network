@@ -30,7 +30,6 @@ public class ReactionEntity extends Reaction {
     @Id
     @GeneratedValue
     private UUID id;
-    @jakarta.persistence.Column(name = "reaction", unique = true)
-    @Enumerated(EnumType.STRING)
-    private ReactionType reaction;
+    @jakarta.persistence.Column(name = "reaction_description", unique = true)
+    private String description;
 }

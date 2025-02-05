@@ -1,5 +1,6 @@
 package com.example.newsService.app.services;
 
+import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -14,11 +15,12 @@ import com.example.newsService.app.mappers.MediafileMapper;
 import com.example.newsService.core.CrudService;
 import com.example.newsService.core.MediafileCrud;
 import com.example.newsService.core.mediafile.entities.MediafileEntity;
+import com.example.newsService.core.post.entities.PostEntity;
 import com.example.newsService.infra.repositories.JpaMediafileRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
-// @Service
+// @Service 
 // public class MediafileService implements MediafileCrud<MediafileEntity, UUID> {
 
 //     private static final Logger logger = LoggerFactory.getLogger(MediafileService.class);
@@ -101,7 +103,7 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
     private final MediafileMapper mediafileMapper;
 
     @Override
-    public MediafileDTO add(MediafileDTO dto) {
+    public void add(MediafileDTO dto) {
         if (dto == null) {
             logger.error("MediafileDTO is null");
             throw new IllegalArgumentException("Mediafile cannot be null");
@@ -110,8 +112,6 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
 
         MediafileEntity entity = mediafileMapper.toEntity(dto);
         jpaMediafileRepository.addMediafile(entity);
-
-        return mediafileMapper.toDTO(entity);
     }
 
     @Override
@@ -137,7 +137,8 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         }
         try {
             logger.info("Fetching mediafile with ID: {}", id);
-            MediafileEntity mediafile = jpaMediafileRepository.getPost(id);
+            // MediafileEntity mediafile = jpaMediafileRepository.getPost(id);
+            MediafileEntity mediafile = jpaMediafileRepository.getMediafile(id);
             return Optional.of(mediafileMapper.toDTO(mediafile));
         } catch (EntityNotFoundException e) {
             logger.error("Mediafile not found with ID: {}", id);
@@ -146,7 +147,7 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
     }
 
     @Override
-    public void update(MediafileDTO dto) {
+    public void update(UUID id, MediafileDTO dto) {
         if (dto == null) {
             logger.error("MediafileDTO is null");
             throw new IllegalArgumentException("Mediafile cannot be null");
@@ -158,6 +159,12 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         try {
             logger.info("Updating mediafile: {}", dto);
             MediafileEntity entity = mediafileMapper.toEntity(dto);
+            entity.setId(id);
+            MediafileEntity existingEntity = jpaMediafileRepository.getMediafile(id);      
+            if (existingEntity != null) {
+                entity.setCreatedAt(existingEntity.getCreatedAt());
+                entity.setUpdatedAt(new Date());
+            }
             jpaMediafileRepository.updateMediafile(entity);
         } catch (EntityNotFoundException e) {
             logger.error("Mediafile not found for update: {}", dto);

@@ -49,7 +49,6 @@ public class PostMapper {
             return null;
         }
         PostEntity entity = new PostEntity();
-        entity.setId(dto.getId());
         entity.setTitle(dto.getTitle());
         entity.setContent(dto.getContent());
         entity.setLikeQuantity(dto.getLikeQuantity());

@@ -29,8 +29,17 @@ public class JpaMediafileRepository implements MediafileRepository {
         entityMediafileRepository.save(mediafile);
     }
 
+    // @Override
+    // public MediafileEntity getPost(UUID id) {
+    //     logger.info("Fetching mediafile with ID: {}", id);
+    //     return entityMediafileRepository.findById(id)
+    //             .orElseThrow(() -> {
+    //                 logger.error("Mediafile not found with ID: {}", id);
+    //                 return new EntityNotFoundException("Mediafile not found");
+    //             });
+    // }
     @Override
-    public MediafileEntity getPost(UUID id) {
+    public MediafileEntity getMediafile(UUID id) {
         logger.info("Fetching mediafile with ID: {}", id);
         return entityMediafileRepository.findById(id)
                 .orElseThrow(() -> {
@@ -38,7 +47,6 @@ public class JpaMediafileRepository implements MediafileRepository {
                     return new EntityNotFoundException("Mediafile not found");
                 });
     }
-
     @Override
     public void updateMediafile(MediafileEntity mediafile) {
         logger.info("Updating mediafile: {}", mediafile);
