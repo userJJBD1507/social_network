@@ -2,13 +2,14 @@ package com.example.newsService.core;
 
 
 import java.util.Optional;
+import java.util.UUID;
 
 public interface MediafileCrud<T, ID> {
-    T add(T entity);
+    void add(T entity);
 
     Optional<T> get(ID id);
 
-    void update(T entity);
+    void update(UUID id, T entity);
 
     void delete(ID id);
 }

@@ -11,36 +11,45 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/posts")
+@RequestMapping("/post")
 @RequiredArgsConstructor
 public class PostController {
 
 
     private final PostService postService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO) {
         PostDTO createdPost = postService.add(postDTO);
         return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<PostDTO> getPost(@PathVariable UUID id) {
+    @GetMapping("/get")
+    public ResponseEntity<PostDTO> getPost(@RequestParam("id") UUID id) {
         Optional<PostDTO> post = postService.get(id);
         return post.map(ResponseEntity::ok)
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<PostDTO> updatePost(@PathVariable UUID id, @RequestBody PostDTO postDTO) {
-        postDTO.setId(id);
-        PostDTO updatedPost = postService.update(postDTO);
+    @PutMapping("/update")
+    public ResponseEntity<PostDTO> updatePost(@RequestParam("id") UUID id, @RequestBody PostDTO postDTO) {
+        PostDTO updatedPost = postService.update(id, postDTO);
         return ResponseEntity.ok(updatedPost);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePost(@PathVariable UUID id) {
+    @DeleteMapping("/delete")
+    public ResponseEntity<Void> deletePost(@RequestParam("id") UUID id) {
         postService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+
+
+
+    @PostMapping("/reply")
+    public ResponseEntity<PostDTO> replyToPost(@RequestParam("parentPostId") UUID parentPostId,
+            @RequestBody PostDTO postDTO) {
+        PostDTO createdPost = postService.addPostAsReply(parentPostId, postDTO);
+        return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
 }

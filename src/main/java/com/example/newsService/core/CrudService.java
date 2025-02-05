@@ -1,6 +1,7 @@
 package com.example.newsService.core;
 
 import java.util.Optional;
+import java.util.UUID;
 
 public interface CrudService<T, ID> {
 
@@ -8,7 +9,7 @@ public interface CrudService<T, ID> {
 
     Optional<T> get(ID id);
 
-    T update(T entity);
+    T update(UUID id, T entity);
 
     void delete(ID id);
 }

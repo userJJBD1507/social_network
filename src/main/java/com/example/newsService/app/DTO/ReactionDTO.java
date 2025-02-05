@@ -1,5 +1,7 @@
 package com.example.newsService.app.DTO;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.example.newsService.core.utils.ReactionType;
 
 import lombok.*;
@@ -10,5 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ReactionDTO {
-    private ReactionType reaction;
+    private String description;
+    private String url;
 }

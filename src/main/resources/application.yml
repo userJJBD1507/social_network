@@ -1,23 +1,35 @@
+# spring:
+#   application:
+#     name: news-service
+
+#   datasource:
+#     driver-class-name: org.postgresql.Driver
+#     username: postgres
+#     password: postgres
+#     url: jdbc:postgresql://localhost:5432/postgres
+
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+
+# server:
+#   port: 8001
+
+
+#   servlet:
+#     multipart:
+#       max-file-size: 100MB
+#       max-request-size: 100MB
+
 spring:
-  application:
-    name: news-service
-
   datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
     url: jdbc:postgresql://localhost:5432/postgres
-
+    username: 
+    password: 
+    driver-class-name: org.postgresql.Driver
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-
-server:
-  port: 8001
-
-
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
-

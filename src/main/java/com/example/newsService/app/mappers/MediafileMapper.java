@@ -33,7 +33,7 @@ public class MediafileMapper {
 
         MediafileEntity mediafileEntity = new MediafileEntity();
         mediafileEntity.setType(mediafileDTO.getType());
-        mediafileEntity.setId(mediafileDTO.getId());
+        // mediafileEntity.setId(mediafileDTO.getId());
         mediafileEntity.setUrl(mediafileDTO.getUrl());
         mediafileEntity.setPost(postRepository.findById(mediafileDTO.getPostId()).orElse(null));
 
