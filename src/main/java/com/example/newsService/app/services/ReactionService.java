@@ -32,10 +32,10 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
     private final ReactionMapper reactionMapper;
 
     private final EntityReactionRepository entityReactionRepository;
-    @Autowired
-    private EntityPostRepository entityPostRepository;
-    @Autowired
-    private JpaUserReactionRepository jpaUserReactionRepository;
+
+    private final EntityPostRepository entityPostRepository;
+
+    private final JpaUserReactionRepository jpaUserReactionRepository;
 
     @Override
     public void add(ReactionDTO dto) {
