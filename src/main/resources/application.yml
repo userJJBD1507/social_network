@@ -1,38 +1,47 @@
- spring:
-   application:
-     name: news-service
+spring:
+  application:
+    name: news-service
 
-   datasource:
-     driver-class-name: org.postgresql.Driver
-     username: postgres
-     password: postgres
-     url: jdbc:postgresql://localhost:5432/postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
 
-   jpa:
-     hibernate:
-       ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
 
- server:
-   port: 8001
-
- logging:
-   file:
-     name: logs\logger.log
-   level:
-     root: debug
-   logback:
-     rollingpolicy:
-       file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
-       max-history: 30
-       total-size-cap: 1GB
-     encoder:
-       pattern: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+server:
+  port: 8001
 
 
-   servlet:
-     multipart:
-       max-file-size: 100MB
-       max-request-size: 100MB
+#logging:
+#  file:
+#    name: logs\logger.log
+
+logging:
+  file:
+    name: logs\logger.log
+  level:
+    root: INFO
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+      max-history: 30
+      total-size-cap: 1GB
+    appenders:
+      - type: "net"
+        name: "LOGSTASH"
+        remoteHost: "logstash"
+        port: 5044
+        encoder:
+          pattern: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 
 
