@@ -92,7 +92,7 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         UserReactionEntity userReaction = new UserReactionEntity();
         userReaction.setPost(postEntity);
 
-        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
+        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя) 
         UUID randomUserId = UUID.randomUUID();
         userReaction.setUserId(randomUserId);
         userReaction.setReaction(reactionEntity);
