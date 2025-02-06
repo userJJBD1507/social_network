@@ -67,7 +67,6 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         }
     }
 
-    //ФИКС, НЕ СОХРАНЯЕТ
     public void replyToPost(String description, UUID postId) {
         if (description == null || description.isEmpty()) {
             throw new IllegalArgumentException("Description cannot be null or empty");
@@ -86,8 +85,9 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         }
     
         UserReactionEntity userReaction = new UserReactionEntity();
-        userReaction.setId(UUID.randomUUID());
         userReaction.setPost(postEntity);
+        //РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
+        userReaction.setUserId(UUID.randomUUID());
         userReaction.setReaction(reactionEntity);
     
         jpaUserReactionRepository.addUserReaction(userReaction);
