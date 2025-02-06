@@ -1,13 +1,10 @@
 package com.example.newsService.app.services;
 
-import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.PostDTO;
@@ -22,7 +19,6 @@ import jakarta.persistence.EntityNotFoundException;
 @RequiredArgsConstructor
 @Slf4j
 public class PostService implements CrudService<PostDTO, UUID> {
-
 
 
     private final JpaPostRepository jpaPostRepository;
@@ -72,6 +68,7 @@ public class PostService implements CrudService<PostDTO, UUID> {
             return Optional.empty();
         }
     }
+
     @Override
     public PostDTO update(UUID id, PostDTO dto) {
         if (dto == null) {
@@ -97,8 +94,6 @@ public class PostService implements CrudService<PostDTO, UUID> {
         jpaPostRepository.updatePost(existingEntity);
         return postMapper.toDto(existingEntity);
     }
-
-
 
 
     public PostDTO addPostAsReply(UUID parentPostId, PostDTO dto) {

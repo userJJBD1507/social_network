@@ -18,6 +18,15 @@
  logging:
    file:
      name: logs\logger.log
+   level:
+     root: debug
+   logback:
+     rollingpolicy:
+       file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+       max-history: 30
+       total-size-cap: 1GB
+     encoder:
+       pattern: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
 
 
    servlet:

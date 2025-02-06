@@ -3,15 +3,12 @@ package com.example.newsService.app.services;
 import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.ReactionDTO;
 import com.example.newsService.app.mappers.ReactionMapper;
 import com.example.newsService.core.ReactionsCrud;
-import com.example.newsService.core.UserReaction;
 import com.example.newsService.core.post.entities.PostEntity;
 import com.example.newsService.core.reaction.entities.ReactionEntity;
 import com.example.newsService.core.reaction.entities.UserReactionEntity;
@@ -24,9 +21,8 @@ import jakarta.persistence.EntityNotFoundException;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
-
-    private static final Logger logger = LoggerFactory.getLogger(ReactionService.class);
 
     private final JpaReactionRepository jpaReactionRepository;
     private final ReactionMapper reactionMapper;
@@ -40,10 +36,10 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
     @Override
     public void add(ReactionDTO dto) {
         if (dto == null) {
-            logger.error("ReactionDTO is null");
+            log.error("ReactionDTO is null");
             throw new IllegalArgumentException("Reaction cannot be null");
         }
-        logger.info("Adding reaction: {}", dto);
+        log.info("Adding reaction: {}", dto);
 
         ReactionEntity entity = reactionMapper.toEntity(dto);
         jpaReactionRepository.addReaction(entity);
@@ -52,44 +48,57 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
     @Override
     public void delete(UUID id) {
         if (id == null) {
-            logger.error("ID is null");
+            log.error("ID is null");
             throw new IllegalArgumentException("ID cannot be null");
         }
         ReactionEntity reaction = new ReactionEntity();
         reaction.setId(id);
 
         try {
-            logger.info("Deleting reaction with ID: {}", id);
+            log.info("Deleting reaction with ID: {}", id);
             jpaReactionRepository.deleteReaction(reaction);
         } catch (EntityNotFoundException e) {
-            logger.error("Reaction not found with ID: {}", id);
+            log.error("Reaction not found with ID: {}", id);
             throw e;
         }
     }
 
+
     public void replyToPost(String description, UUID postId) {
+        log.info("Received request to reply to post with ID: {} and description: {}", postId, description);
+
         if (description == null || description.isEmpty()) {
+            log.error("Description cannot be null or empty");
             throw new IllegalArgumentException("Description cannot be null or empty");
         }
-    
+
         if (postId == null) {
+            log.error("Post ID cannot be null");
             throw new IllegalArgumentException("Post ID cannot be null");
         }
+
         ReactionEntity reactionEntity = entityReactionRepository.findByDescription(description);
         if (reactionEntity == null) {
+            log.warn("Reaction with description '{}' not found", description);
             throw new EntityNotFoundException("Reaction with description " + description + " not found");
         }
+
         PostEntity postEntity = entityPostRepository.findById(postId).orElse(null);
         if (postEntity == null) {
+            log.warn("Post with ID '{}' not found", postId);
             throw new EntityNotFoundException("Post with ID " + postId + " not found");
         }
-    
+
         UserReactionEntity userReaction = new UserReactionEntity();
         userReaction.setPost(postEntity);
-        //РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
-        userReaction.setUserId(UUID.randomUUID());
+
+        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
+        UUID randomUserId = UUID.randomUUID();
+        userReaction.setUserId(randomUserId);
         userReaction.setReaction(reactionEntity);
-    
+
         jpaUserReactionRepository.addUserReaction(userReaction);
+        log.info("User reaction added for post ID: {} with user ID: {} and reaction: {}", postId, randomUserId, description);
     }
+
 }
