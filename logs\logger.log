@@ -1,0 +1,1356 @@
+2025-02-06T11:34:57.857+01:00  INFO 8053 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 8053 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T11:34:57.861+01:00  INFO 8053 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T11:35:00.271+01:00  INFO 8053 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T11:35:00.401+01:00  INFO 8053 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 4 JPA repository interfaces.
+2025-02-06T11:35:01.333+01:00  INFO 8053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T11:35:01.370+01:00  INFO 8053 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T11:35:01.371+01:00  INFO 8053 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T11:35:01.536+01:00  INFO 8053 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T11:35:01.537+01:00  INFO 8053 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3531 ms
+2025-02-06T11:35:01.912+01:00  INFO 8053 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T11:35:02.136+01:00  INFO 8053 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T11:35:02.254+01:00  INFO 8053 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T11:35:02.881+01:00  INFO 8053 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T11:35:03.088+01:00  INFO 8053 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T11:35:03.943+01:00  INFO 8053 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@459bf87c
+2025-02-06T11:35:03.958+01:00  INFO 8053 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T11:35:04.338+01:00  WARN 8053 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T11:35:04.392+01:00  INFO 8053 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T11:35:06.147+01:00  INFO 8053 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-06T11:35:06.764+01:00  INFO 8053 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T11:35:07.312+01:00  WARN 8053 --- [main] com.amazonaws.util.VersionInfoUtils      : The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.base/java.lang.Thread.getStackTrace(Thread.java:2450)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at com.example.newsService.infra.services.S3StorageServiceImpl.init(S3StorageServiceImpl.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:10)
+2025-02-06T11:35:09.385+01:00  WARN 8053 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-06T11:35:09.477+01:00  INFO 8053 --- [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-06T11:35:10.184+01:00  INFO 8053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-06T11:35:10.200+01:00  INFO 8053 --- [main] c.e.newsService.NewsServiceApplication   : Started NewsServiceApplication in 13.791 seconds (process running for 15.167)
+2025-02-06T11:35:19.214+01:00  INFO 8053 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06T11:35:19.215+01:00  INFO 8053 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-06T11:35:19.216+01:00  INFO 8053 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-06T11:35:19.330+01:00  INFO 8053 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Received request to create post: com.example.newsService.app.DTO.PostDTO@5e41ff00
+2025-02-06T11:35:19.331+01:00  INFO 8053 --- [http-nio-8080-exec-1] c.e.n.app.services.PostService           : Adding post with title: Simple main
+2025-02-06T11:35:19.331+01:00  INFO 8053 --- [http-nio-8080-exec-1] c.e.n.i.repositories.JpaPostRepository   : Adding post: Post(id=null, title=Simple main, content=This is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=false, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:35:19.572+01:00  INFO 8053 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Post created successfully: com.example.newsService.app.DTO.PostDTO@62bdef5e
+2025-02-06T11:35:40.425+01:00  INFO 8053 --- [http-nio-8080-exec-3] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:35:40.426+01:00  INFO 8053 --- [http-nio-8080-exec-3] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:35:40.426+01:00  INFO 8053 --- [http-nio-8080-exec-3] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:36:21.903+01:00  INFO 8053 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and data: com.example.newsService.app.DTO.PostDTO@2f4c6b8b
+2025-02-06T11:36:21.906+01:00  INFO 8053 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Adding post with title: Simple main INNER
+2025-02-06T11:36:21.906+01:00  INFO 8053 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:36:21.913+01:00  INFO 8053 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Adding post: Post(id=null, title=Simple main INNER, content=This is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=false, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:36:21.965+01:00  INFO 8053 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Reply created successfully: com.example.newsService.app.DTO.PostDTO@11b4ee0a
+2025-02-06T11:36:32.291+01:00  INFO 8053 --- [http-nio-8080-exec-5] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:36:32.291+01:00  INFO 8053 --- [http-nio-8080-exec-5] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:36:32.291+01:00  INFO 8053 --- [http-nio-8080-exec-5] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:37:40.436+01:00  INFO 8053 --- [http-nio-8080-exec-8] c.e.n.p.api.MediafileController          : Received request to add mediafile for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:37:41.149+01:00 ERROR 8053 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Failed to upload file] with root cause
+
+com.amazonaws.services.s3.model.AmazonS3Exception: The request signature we calculated does not match the signature you provided. Check your key and signing method. (Service: Amazon S3; Status Code: 403; Error Code: SignatureDoesNotMatch; Request ID: 1821982F8A2B9774; S3 Extended Request ID: 880a3dd9-fc3a-4a6a-b670-8b1a63ce7bf8; Proxy: null)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleErrorResponse(AmazonHttpClient.java:1912) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleServiceErrorResponse(AmazonHttpClient.java:1450) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1419) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1183) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:838) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:805) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:779) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:735) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:717) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:581) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:559) ~[aws-java-sdk-core-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5605) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5552) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client.access$300(AmazonS3Client.java:428) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client$PutObjectStrategy.invokeServiceCall(AmazonS3Client.java:6686) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client.uploadObject(AmazonS3Client.java:1916) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.amazonaws.services.s3.AmazonS3Client.putObject(AmazonS3Client.java:1876) ~[aws-java-sdk-s3-1.12.780.jar:na]
+	at com.example.newsService.infra.services.S3StorageServiceImpl.upload(S3StorageServiceImpl.java:130) ~[classes/:na]
+	at com.example.newsService.presentation.api.MediafileController.addMediafile(MediafileController.java:106) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-02-06T11:39:57.364+01:00  INFO 8053 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-06T11:39:57.394+01:00  INFO 8053 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-06T11:39:57.427+01:00  INFO 8053 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T11:39:57.492+01:00  INFO 8053 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T11:39:57.516+01:00  INFO 8053 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-06T11:40:00.290+01:00  INFO 8995 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 8995 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T11:40:00.294+01:00  INFO 8995 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T11:40:02.306+01:00  INFO 8995 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T11:40:02.429+01:00  INFO 8995 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+2025-02-06T11:40:03.794+01:00  INFO 8995 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T11:40:03.844+01:00  INFO 8995 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T11:40:03.845+01:00  INFO 8995 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T11:40:04.033+01:00  INFO 8995 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T11:40:04.034+01:00  INFO 8995 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3611 ms
+2025-02-06T11:40:04.353+01:00  INFO 8995 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T11:40:04.451+01:00  INFO 8995 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T11:40:04.509+01:00  INFO 8995 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T11:40:05.193+01:00  INFO 8995 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T11:40:05.271+01:00  INFO 8995 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T11:40:05.648+01:00  INFO 8995 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b444b5
+2025-02-06T11:40:05.654+01:00  INFO 8995 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T11:40:05.768+01:00  WARN 8995 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T11:40:05.818+01:00  INFO 8995 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T11:40:07.860+01:00  INFO 8995 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-06T11:40:08.514+01:00  INFO 8995 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T11:40:08.945+01:00  WARN 8995 --- [main] com.amazonaws.util.VersionInfoUtils      : The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.base/java.lang.Thread.getStackTrace(Thread.java:2450)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at com.example.newsService.infra.services.S3StorageServiceImpl.init(S3StorageServiceImpl.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:10)
+2025-02-06T11:40:10.123+01:00  WARN 8995 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-06T11:40:10.203+01:00  INFO 8995 --- [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-06T11:40:10.823+01:00  INFO 8995 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-06T11:40:10.840+01:00  INFO 8995 --- [main] c.e.newsService.NewsServiceApplication   : Started NewsServiceApplication in 11.666 seconds (process running for 13.075)
+2025-02-06T11:40:17.309+01:00  INFO 8995 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06T11:40:17.310+01:00  INFO 8995 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-06T11:40:17.312+01:00  INFO 8995 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-06T11:40:17.409+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.p.api.MediafileController          : Received request to add mediafile for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:40:17.701+01:00  WARN 8995 --- [http-nio-8080-exec-2] com.amazonaws.util.Base64                : JAXB is unavailable. Will fallback to SDK implementation which may be less performant.If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.
+2025-02-06T11:40:17.714+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.app.services.MediafileService      : Adding mediafile: com.example.newsService.app.DTO.MediafileDTO@36d16c23
+2025-02-06T11:40:17.858+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.r.JpaMediafileRepository         : Adding mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T11:40:17.994+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.p.api.MediafileController          : Mediafile added successfully with URL: file352f1bfc-71f8-476c-bbde-bff43b4261c7
+2025-02-06T11:41:03.481+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Received request to add mediafile for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:41:03.502+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.MediafileService      : Adding mediafile: com.example.newsService.app.DTO.MediafileDTO@2c8d11e
+2025-02-06T11:41:03.576+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaMediafileRepository         : Adding mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T11:41:03.621+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Mediafile added successfully with URL: filed355a7d0-edf4-4873-89a7-9c434351ac77
+2025-02-06T11:41:55.354+01:00  WARN 8995 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-02-06T11:41:55.372+01:00  WARN 8995 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded]
+2025-02-06T11:42:45.647+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.MediafileController          : Received request to add mediafile for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:42:45.754+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.app.services.MediafileService      : Adding mediafile: com.example.newsService.app.DTO.MediafileDTO@6524b5cd
+2025-02-06T11:42:45.780+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.r.JpaMediafileRepository         : Adding mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T11:42:45.795+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.MediafileController          : Mediafile added successfully with URL: filec23bdd2a-7680-4d6e-863d-e0d3a172c803
+2025-02-06T11:43:22.196+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:43:22.197+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:43:22.198+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:44:37.695+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.p.api.MediafileController          : Received request to update mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:44:37.696+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:44:37.723+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.app.services.MediafileService      : Updating mediafile: com.example.newsService.app.DTO.MediafileDTO@593aabf1
+2025-02-06T11:44:37.729+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:44:37.732+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.i.r.JpaMediafileRepository         : Updating mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=2025-02-06 11:41:03.578, updatedAt=Thu Feb 06 11:44:37 CET 2025}
+2025-02-06T11:44:37.888+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.p.api.MediafileController          : Mediafile updated successfully with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:44:52.989+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:44:52.992+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:44:52.992+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:24.235+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.p.api.MediafileController          : Received request to delete mediafile with ID: afde929f-6525-408d-b0d9-82f7b71a3990
+2025-02-06T11:45:24.237+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.app.services.MediafileService      : Deleting mediafile with ID: afde929f-6525-408d-b0d9-82f7b71a3990
+2025-02-06T11:45:24.238+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: afde929f-6525-408d-b0d9-82f7b71a3990
+2025-02-06T11:45:24.257+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.r.JpaMediafileRepository         : Deleting mediafile with ID: afde929f-6525-408d-b0d9-82f7b71a3990
+2025-02-06T11:45:24.333+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.p.api.MediafileController          : Mediafile deleted successfully with ID: afde929f-6525-408d-b0d9-82f7b71a3990
+2025-02-06T11:45:31.683+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:31.685+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:31.685+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:47.435+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:45:47.437+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:45:47.437+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:45:54.813+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:54.814+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:45:54.814+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:46:29.686+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.presentation.api.PostController    : Received request to update post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and data: com.example.newsService.app.DTO.PostDTO@71df75f4
+2025-02-06T11:46:29.687+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.app.services.PostService           : Updating post with title: MAIN UPDATED YES
+2025-02-06T11:46:29.687+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:46:29.690+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.repositories.JpaPostRepository   : Updating post: Post(id=27cd1557-dbc6-477a-97c5-89b84a1d1990, title=MAIN UPDATED YES, content=UPDATE is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:46:29.755+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.presentation.api.PostController    : Post updated successfully: com.example.newsService.app.DTO.PostDTO@513c678e
+2025-02-06T11:46:38.786+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:46:38.786+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:46:38.786+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:04.602+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:04.603+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:04.603+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:13.591+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.presentation.api.PostController    : Received request to get post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:47:13.593+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.app.services.PostService           : Fetching post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:47:13.594+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: c3935f44-2c46-479b-bf73-120af7d0e2b7
+2025-02-06T11:47:21.290+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:21.291+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:21.291+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:55.880+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:55.882+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:47:55.883+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:04.570+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.presentation.api.PostController    : Received request to update post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and data: com.example.newsService.app.DTO.PostDTO@20d6a62d
+2025-02-06T11:48:04.572+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.app.services.PostService           : Updating post with title: MAIN UPDATED YES OKOKOK
+2025-02-06T11:48:04.572+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:04.592+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.repositories.JpaPostRepository   : Updating post: Post(id=27cd1557-dbc6-477a-97c5-89b84a1d1990, title=MAIN UPDATED YES OKOKOK, content=UPDATE is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:48:04.613+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.presentation.api.PostController    : Post updated successfully: com.example.newsService.app.DTO.PostDTO@1e77868d
+2025-02-06T11:48:09.838+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:09.839+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:09.839+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:12.138+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:12.140+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:12.140+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:48:57.973+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Received request to add reaction with description: ok reaction
+2025-02-06T11:48:58.047+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@4ac233e
+2025-02-06T11:48:58.048+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=ok reaction)
+2025-02-06T11:48:58.085+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: ok reaction
+2025-02-06T11:49:27.084+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Received request to add reaction with description: ok reaction
+2025-02-06T11:49:27.091+01:00 ERROR 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Error while adding reaction: Failed to upload file
+
+java.lang.RuntimeException: Failed to upload file
+	at com.example.newsService.infra.services.S3StorageServiceImpl.uploadFileWithExistingFilename(S3StorageServiceImpl.java:120) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.addReaction(ReactionController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.lang.RuntimeException: File with this name already exists
+	at com.example.newsService.infra.services.S3StorageServiceImpl.uploadFileWithExistingFilename(S3StorageServiceImpl.java:105) ~[classes/:na]
+	... 49 common frames omitted
+
+2025-02-06T11:49:48.720+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.p.api.ReactionController           : Received request to add reaction with description: cool
+2025-02-06T11:49:48.739+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@5113bf0b
+2025-02-06T11:49:48.739+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=cool)
+2025-02-06T11:49:48.785+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: cool
+2025-02-06T11:50:23.468+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955
+2025-02-06T11:50:23.469+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.app.services.ReactionService       : Deleting reaction with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955
+2025-02-06T11:50:24.600+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955
+2025-02-06T11:50:24.607+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Reaction deleted successfully with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955
+2025-02-06T11:50:51.074+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.p.api.ReactionController           : Received request to add reaction with description: wow super
+2025-02-06T11:50:51.094+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@2f070c10
+2025-02-06T11:50:51.095+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=wow super)
+2025-02-06T11:50:51.140+01:00  INFO 8995 --- [http-nio-8080-exec-10] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: wow super
+2025-02-06T11:51:35.225+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955 and description: ok reaction
+2025-02-06T11:51:35.228+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955 and description: ok reaction
+2025-02-06T11:51:35.367+01:00  WARN 8995 --- [http-nio-8080-exec-1] c.e.n.app.services.ReactionService       : Post with ID '6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955' not found
+2025-02-06T11:51:35.369+01:00 ERROR 8995 --- [http-nio-8080-exec-1] c.e.n.p.api.ReactionController           : Error while replying to post with ID 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955: Post with ID 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955 not found
+
+jakarta.persistence.EntityNotFoundException: Post with ID 6b5f4c0f-59d1-4d6c-aeee-fc29a93c7955 not found
+	at com.example.newsService.app.services.ReactionService.replyToPost(ReactionService.java:99) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.addReactionReply(ReactionController.java:70) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-02-06T11:52:08.592+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: ok reaction
+2025-02-06T11:52:08.593+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: ok reaction
+2025-02-06T11:52:08.603+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaUserReactionRepository      : Adding user reaction: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T11:52:08.718+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.ReactionService       : User reaction added for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 with user ID: 8d5ffea8-ef16-4cd6-8355-ab2c07b7fea7 and reaction: ok reaction
+2025-02-06T11:52:08.718+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Reply added successfully to post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:52:30.045+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:52:30.049+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:52:30.050+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:52:50.593+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: dffd
+2025-02-06T11:52:50.595+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: dffd
+2025-02-06T11:52:50.599+01:00  WARN 8995 --- [http-nio-8080-exec-5] c.e.n.app.services.ReactionService       : Reaction with description 'dffd' not found
+2025-02-06T11:52:50.599+01:00 ERROR 8995 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Error while replying to post with ID 27cd1557-dbc6-477a-97c5-89b84a1d1990: Reaction with description dffd not found
+
+jakarta.persistence.EntityNotFoundException: Reaction with description dffd not found
+	at com.example.newsService.app.services.ReactionService.replyToPost(ReactionService.java:93) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.addReactionReply(ReactionController.java:70) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-02-06T11:53:01.393+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: wow super
+2025-02-06T11:53:01.395+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and description: wow super
+2025-02-06T11:53:01.411+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.r.JpaUserReactionRepository      : Adding user reaction: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T11:53:01.437+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.app.services.ReactionService       : User reaction added for post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 with user ID: 7ae4db40-a64d-4947-9e5f-19226300de86 and reaction: wow super
+2025-02-06T11:53:01.438+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Reply added successfully to post ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:53:29.412+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:53:29.415+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:53:29.416+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:53:54.937+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: 49c1dd98-e58d-4461-ac2e-50fbf17dbef3
+2025-02-06T11:53:54.940+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.app.services.ReactionService       : Deleting reaction with ID: 49c1dd98-e58d-4461-ac2e-50fbf17dbef3
+2025-02-06T11:53:54.998+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: 49c1dd98-e58d-4461-ac2e-50fbf17dbef3
+2025-02-06T11:53:55.076+01:00  WARN 8995 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23503
+2025-02-06T11:53:55.076+01:00 ERROR 8995 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: update or delete on table "reactions" violates foreign key constraint "fkkn32veyenu1apy756xst21vce" on table "user_reactions"
+  Подробности: Key (id)=(49c1dd98-e58d-4461-ac2e-50fbf17dbef3) is still referenced from table "user_reactions".
+2025-02-06T11:53:55.115+01:00 ERROR 8995 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Error while deleting reaction with ID 49c1dd98-e58d-4461-ac2e-50fbf17dbef3: could not execute statement [ERROR: update or delete on table "reactions" violates foreign key constraint "fkkn32veyenu1apy756xst21vce" on table "user_reactions"
+  Подробности: Key (id)=(49c1dd98-e58d-4461-ac2e-50fbf17dbef3) is still referenced from table "user_reactions".] [delete from reactions where id=?]; SQL [delete from reactions where id=?]; constraint [fkkn32veyenu1apy756xst21vce]
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: update or delete on table "reactions" violates foreign key constraint "fkkn32veyenu1apy756xst21vce" on table "user_reactions"
+  Подробности: Key (id)=(49c1dd98-e58d-4461-ac2e-50fbf17dbef3) is still referenced from table "user_reactions".] [delete from reactions where id=?]; SQL [delete from reactions where id=?]; constraint [fkkn32veyenu1apy756xst21vce]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.4.2.jar:3.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.2.jar:6.2.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy136.delete(Unknown Source) ~[na:na]
+	at com.example.newsService.infra.repositories.JpaReactionRepository.deleteReaction(JpaReactionRepository.java:35) ~[classes/:na]
+	at com.example.newsService.app.services.ReactionService.delete(ReactionService.java:69) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.deleteReaction(ReactionController.java:55) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: update or delete on table "reactions" violates foreign key constraint "fkkn32veyenu1apy756xst21vce" on table "user_reactions"
+  Подробности: Key (id)=(49c1dd98-e58d-4461-ac2e-50fbf17dbef3) is still referenced from table "user_reactions".] [delete from reactions where id=?]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:279) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:87) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.2.jar:6.2.2]
+	... 63 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "reactions" violates foreign key constraint "fkkn32veyenu1apy756xst21vce" on table "user_reactions"
+  Подробности: Key (id)=(49c1dd98-e58d-4461-ac2e-50fbf17dbef3) is still referenced from table "user_reactions".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.5.jar:42.7.5]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	... 83 common frames omitted
+
+2025-02-06T11:55:21.374+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Received request to update post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and data: com.example.newsService.app.DTO.PostDTO@3fef443c
+2025-02-06T11:55:21.374+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.app.services.PostService           : Updating post with title: LAST UPDATE
+2025-02-06T11:55:21.374+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:55:21.379+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.i.repositories.JpaPostRepository   : Updating post: Post(id=27cd1557-dbc6-477a-97c5-89b84a1d1990, title=LAST UPDATE, content=UPDATE is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:55:21.437+01:00  INFO 8995 --- [http-nio-8080-exec-1] c.e.n.presentation.api.PostController    : Post updated successfully: com.example.newsService.app.DTO.PostDTO@16e98e04
+2025-02-06T11:55:24.107+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:55:24.107+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:55:24.107+01:00  INFO 8995 --- [http-nio-8080-exec-2] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:56:19.056+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Received request to delete mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:56:19.058+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.app.services.MediafileService      : Deleting mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:56:19.058+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:56:19.062+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaMediafileRepository         : Deleting mediafile with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:56:19.114+01:00  INFO 8995 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Mediafile deleted successfully with ID: 28fe5b90-a558-4b36-b99a-d0605ce4866c
+2025-02-06T11:56:39.378+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:56:39.379+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:56:39.380+01:00  INFO 8995 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:57:36.214+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.presentation.api.PostController    : Received request to reply to post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990 and data: com.example.newsService.app.DTO.PostDTO@1a37a0f9
+2025-02-06T11:57:36.215+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.app.services.PostService           : Adding post with title: Simple main INNER @@@@
+2025-02-06T11:57:36.215+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:57:36.219+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.i.repositories.JpaPostRepository   : Adding post: Post(id=null, title=Simple main INNER @@@@, content=This is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:57:36.281+01:00  INFO 8995 --- [http-nio-8080-exec-5] c.e.n.presentation.api.PostController    : Reply created successfully: com.example.newsService.app.DTO.PostDTO@55aaf3e
+2025-02-06T11:57:41.051+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.presentation.api.PostController    : Received request to get post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:57:41.052+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.app.services.PostService           : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:57:41.052+01:00  INFO 8995 --- [http-nio-8080-exec-7] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:58:15.240+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.presentation.api.PostController    : Received request to reply to post with ID: 01ccf014-0ec2-4ab8-b9fe-a85bc5ea258d and data: com.example.newsService.app.DTO.PostDTO@705002d8
+2025-02-06T11:58:15.242+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.app.services.PostService           : Adding post with title: Simple main INNER INNEVFGSHVDHGDFV
+2025-02-06T11:58:15.242+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 01ccf014-0ec2-4ab8-b9fe-a85bc5ea258d
+2025-02-06T11:58:15.251+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.i.repositories.JpaPostRepository   : Adding post: Post(id=null, title=Simple main INNER INNEVFGSHVDHGDFV, content=This is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T11:58:15.296+01:00  INFO 8995 --- [http-nio-8080-exec-6] c.e.n.presentation.api.PostController    : Reply created successfully: com.example.newsService.app.DTO.PostDTO@1dce4999
+2025-02-06T11:58:25.293+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.presentation.api.PostController    : Received request to get post with ID: 01ccf014-0ec2-4ab8-b9fe-a85bc5ea258d
+2025-02-06T11:58:25.294+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.app.services.PostService           : Fetching post with ID: 01ccf014-0ec2-4ab8-b9fe-a85bc5ea258d
+2025-02-06T11:58:25.294+01:00  INFO 8995 --- [http-nio-8080-exec-8] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 01ccf014-0ec2-4ab8-b9fe-a85bc5ea258d
+2025-02-06T11:58:48.062+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.presentation.api.PostController    : Received request to delete post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:58:48.062+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.app.services.PostService           : Deleting post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:58:48.062+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.i.repositories.JpaPostRepository   : Deleting post with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:58:48.175+01:00  INFO 8995 --- [http-nio-8080-exec-9] c.e.n.presentation.api.PostController    : Post deleted successfully with ID: 27cd1557-dbc6-477a-97c5-89b84a1d1990
+2025-02-06T11:59:19.061+01:00  INFO 8995 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-06T11:59:19.077+01:00  INFO 8995 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-06T11:59:19.095+01:00  INFO 8995 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T11:59:19.111+01:00  INFO 8995 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T11:59:19.124+01:00  INFO 8995 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-06T12:07:10.630+01:00  INFO 9976 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 9976 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T12:07:10.633+01:00  INFO 9976 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T12:07:12.616+01:00  INFO 9976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T12:07:12.726+01:00  INFO 9976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 4 JPA repository interfaces.
+2025-02-06T12:07:13.470+01:00  INFO 9976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T12:07:13.498+01:00  INFO 9976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T12:07:13.499+01:00  INFO 9976 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T12:07:13.627+01:00  INFO 9976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T12:07:13.628+01:00  INFO 9976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2890 ms
+2025-02-06T12:07:13.865+01:00  INFO 9976 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T12:07:13.963+01:00  INFO 9976 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T12:07:14.063+01:00  INFO 9976 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T12:07:14.496+01:00  INFO 9976 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T12:07:14.537+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T12:07:14.835+01:00  INFO 9976 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6a278584
+2025-02-06T12:07:14.837+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T12:07:14.918+01:00  WARN 9976 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T12:07:14.941+01:00  INFO 9976 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T12:07:15.190+01:00 ERROR 9976 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.example.newsService.core.reaction.entities.ReactionEntity.reactionEntity' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2025-02-06T12:07:15.191+01:00  WARN 9976 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.example.newsService.core.reaction.entities.ReactionEntity.reactionEntity' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+2025-02-06T12:07:15.192+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T12:07:15.284+01:00  INFO 9976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-06T12:07:15.288+01:00  INFO 9976 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-02-06T12:07:15.304+01:00  INFO 9976 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-06T12:07:15.333+01:00 ERROR 9976 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.example.newsService.core.reaction.entities.ReactionEntity.reactionEntity' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.2.jar:3.4.2]
+	at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:10) ~[classes/:na]
+Caused by: org.hibernate.AnnotationException: Property 'com.example.newsService.core.reaction.entities.ReactionEntity.reactionEntity' is not a collection and may not be a '@OneToMany', '@ManyToMany', or '@ElementCollection'
+	at org.hibernate.boot.model.internal.CollectionBinder.determineSemanticJavaType(CollectionBinder.java:1121) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.determineCollectionClassification(CollectionBinder.java:1013) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.createBinderAutomatically(CollectionBinder.java:855) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.getCollectionBinder(CollectionBinder.java:848) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:284) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:897) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:811) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:732) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1088) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:419) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:251) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:401) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:257) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 15 common frames omitted
+
+2025-02-06T12:12:04.120+01:00  INFO 10234 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 10234 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T12:12:04.125+01:00  INFO 10234 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T12:12:05.943+01:00  INFO 10234 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T12:12:06.067+01:00  INFO 10234 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2025-02-06T12:12:06.826+01:00  INFO 10234 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T12:12:06.853+01:00  INFO 10234 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T12:12:06.854+01:00  INFO 10234 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T12:12:07.004+01:00  INFO 10234 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T12:12:07.005+01:00  INFO 10234 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2724 ms
+2025-02-06T12:12:07.276+01:00  INFO 10234 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T12:12:07.359+01:00  INFO 10234 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T12:12:07.418+01:00  INFO 10234 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T12:12:07.925+01:00  INFO 10234 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T12:12:07.968+01:00  INFO 10234 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T12:12:08.350+01:00  INFO 10234 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a72e2e8
+2025-02-06T12:12:08.352+01:00  INFO 10234 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T12:12:08.397+01:00  WARN 10234 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T12:12:08.433+01:00  INFO 10234 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T12:12:09.927+01:00  INFO 10234 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-06T12:12:10.569+01:00  INFO 10234 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:12:11.378+01:00  WARN 10234 --- [main] com.amazonaws.util.VersionInfoUtils      : The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.base/java.lang.Thread.getStackTrace(Thread.java:2450)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at com.example.newsService.infra.services.S3StorageServiceImpl.init(S3StorageServiceImpl.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:10)
+2025-02-06T12:12:12.817+01:00  WARN 10234 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-06T12:12:12.942+01:00  INFO 10234 --- [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-06T12:12:13.770+01:00  INFO 10234 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-06T12:12:13.797+01:00  INFO 10234 --- [main] c.e.newsService.NewsServiceApplication   : Started NewsServiceApplication in 10.765 seconds (process running for 11.852)
+2025-02-06T12:12:52.875+01:00  INFO 10234 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06T12:12:52.876+01:00  INFO 10234 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-06T12:12:52.878+01:00  INFO 10234 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-06T12:13:02.508+01:00  INFO 10234 --- [http-nio-8080-exec-3] c.e.n.presentation.api.PostController    : Received request to create post: com.example.newsService.app.DTO.PostDTO@1cd84abb
+2025-02-06T12:13:02.510+01:00  INFO 10234 --- [http-nio-8080-exec-3] c.e.n.app.services.PostService           : Adding post with title: Simple main
+2025-02-06T12:13:02.510+01:00  INFO 10234 --- [http-nio-8080-exec-3] c.e.n.i.repositories.JpaPostRepository   : Adding post: Post(id=null, title=Simple main, content=This is the content of the post., likeQuantity=null, commentQuantity=null, isPrivate=true, userId=2f0f2702-9237-4a42-a264-b56499170553)
+2025-02-06T12:13:02.735+01:00  INFO 10234 --- [http-nio-8080-exec-3] c.e.n.presentation.api.PostController    : Post created successfully: com.example.newsService.app.DTO.PostDTO@6acfd5f3
+2025-02-06T12:13:50.730+01:00  INFO 10234 --- [http-nio-8080-exec-4] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: wow super
+2025-02-06T12:13:50.731+01:00  INFO 10234 --- [http-nio-8080-exec-4] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: wow super
+2025-02-06T12:13:50.974+01:00  INFO 10234 --- [http-nio-8080-exec-4] c.e.n.i.r.JpaUserReactionRepository      : Adding user reaction: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T12:13:50.985+01:00  INFO 10234 --- [http-nio-8080-exec-4] c.e.n.app.services.ReactionService       : User reaction added for post ID: 81920af6-3a58-4106-868a-26eaa0166995 with user ID: 94a6f965-a5e2-4b7d-ac26-c35a94e1e925 and reaction: wow super
+2025-02-06T12:13:50.986+01:00  INFO 10234 --- [http-nio-8080-exec-4] c.e.n.p.api.ReactionController           : Reply added successfully to post ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:14:14.265+01:00  INFO 10234 --- [http-nio-8080-exec-5] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:14:14.266+01:00  INFO 10234 --- [http-nio-8080-exec-5] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:14:14.266+01:00  INFO 10234 --- [http-nio-8080-exec-5] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:14:34.190+01:00  INFO 10234 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:14:34.191+01:00  INFO 10234 --- [http-nio-8080-exec-6] c.e.n.app.services.ReactionService       : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:14:35.062+01:00  INFO 10234 --- [http-nio-8080-exec-6] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:14:35.084+01:00 ERROR 10234 --- [http-nio-8080-exec-6] c.e.n.p.api.ReactionController           : Error while deleting reaction with ID dccb1fcf-34ac-4437-964b-572f140ed3ca: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+
+org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:368) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.4.2.jar:3.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.2.jar:6.2.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy136.delete(Unknown Source) ~[na:na]
+	at com.example.newsService.infra.repositories.JpaReactionRepository.deleteReaction(JpaReactionRepository.java:35) ~[classes/:na]
+	at com.example.newsService.app.services.ReactionService.delete(ReactionService.java:69) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.deleteReaction(ReactionController.java:55) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.lang.IllegalStateException: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:157) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:167) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:173) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1433) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.2.jar:6.2.2]
+	... 63 common frames omitted
+Caused by: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.hibernate.engine.spi.CascadingActions$9.cascade(CascadingActions.java:382) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.spi.CascadingActions$9.cascade(CascadingActions.java:372) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:570) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:492) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:253) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:192) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:169) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.preFlush(AbstractFlushingEventListener.java:107) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:82) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	... 71 common frames omitted
+
+2025-02-06T12:16:06.029+01:00  INFO 10234 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-06T12:16:06.056+01:00  INFO 10234 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-06T12:16:06.076+01:00  INFO 10234 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:16:06.092+01:00  INFO 10234 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T12:16:06.104+01:00  INFO 10234 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-06T12:16:09.236+01:00  INFO 11000 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 11000 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T12:16:09.240+01:00  INFO 11000 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T12:16:11.088+01:00  INFO 11000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T12:16:11.303+01:00  INFO 11000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 198 ms. Found 4 JPA repository interfaces.
+2025-02-06T12:16:12.852+01:00  INFO 11000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T12:16:12.893+01:00  INFO 11000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T12:16:12.893+01:00  INFO 11000 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T12:16:13.067+01:00  INFO 11000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T12:16:13.068+01:00  INFO 11000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3698 ms
+2025-02-06T12:16:13.357+01:00  INFO 11000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T12:16:13.442+01:00  INFO 11000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T12:16:13.494+01:00  INFO 11000 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T12:16:14.177+01:00  INFO 11000 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T12:16:14.230+01:00  INFO 11000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T12:16:14.510+01:00  INFO 11000 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6533629
+2025-02-06T12:16:14.512+01:00  INFO 11000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T12:16:14.555+01:00  WARN 11000 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T12:16:14.588+01:00  INFO 11000 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T12:16:16.571+01:00  INFO 11000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-06T12:16:17.179+01:00  INFO 11000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:16:17.592+01:00  WARN 11000 --- [main] com.amazonaws.util.VersionInfoUtils      : The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.base/java.lang.Thread.getStackTrace(Thread.java:2450)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at com.example.newsService.infra.services.S3StorageServiceImpl.init(S3StorageServiceImpl.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:10)
+2025-02-06T12:16:19.129+01:00  WARN 11000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-06T12:16:19.200+01:00  INFO 11000 --- [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-06T12:16:19.834+01:00  INFO 11000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-06T12:16:19.851+01:00  INFO 11000 --- [main] c.e.newsService.NewsServiceApplication   : Started NewsServiceApplication in 12.185 seconds (process running for 13.426)
+2025-02-06T12:16:22.840+01:00  INFO 11000 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06T12:16:22.840+01:00  INFO 11000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-06T12:16:22.842+01:00  INFO 11000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-06T12:16:22.924+01:00  INFO 11000 --- [http-nio-8080-exec-2] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:16:22.929+01:00  INFO 11000 --- [http-nio-8080-exec-2] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:16:22.930+01:00  INFO 11000 --- [http-nio-8080-exec-2] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:16:30.637+01:00  INFO 11000 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:16:30.638+01:00  INFO 11000 --- [http-nio-8080-exec-3] c.e.n.app.services.ReactionService       : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:16:31.507+01:00  INFO 11000 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:16:31.544+01:00 ERROR 11000 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Error while deleting reaction with ID dccb1fcf-34ac-4437-964b-572f140ed3ca: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+
+org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:368) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.4.2.jar:3.4.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.2.jar:6.2.2]
+	at jdk.proxy2/jdk.proxy2.$Proxy136.delete(Unknown Source) ~[na:na]
+	at com.example.newsService.infra.repositories.JpaReactionRepository.deleteReaction(JpaReactionRepository.java:35) ~[classes/:na]
+	at com.example.newsService.app.services.ReactionService.delete(ReactionService.java:69) ~[classes/:na]
+	at com.example.newsService.presentation.api.ReactionController.deleteReaction(ReactionController.java:55) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.lang.IllegalStateException: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:157) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:167) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:173) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1433) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.2.jar:6.2.2]
+	... 63 common frames omitted
+Caused by: org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.example.newsService.core.reaction.entities.ReactionEntity' (save the transient instance before flushing)
+	at org.hibernate.engine.spi.CascadingActions$9.cascade(CascadingActions.java:382) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.spi.CascadingActions$9.cascade(CascadingActions.java:372) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:570) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:492) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:253) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:192) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:169) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.preFlush(AbstractFlushingEventListener.java:107) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:82) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.5.Final.jar:6.6.5.Final]
+	... 71 common frames omitted
+
+2025-02-06T12:23:27.862+01:00  INFO 11000 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-06T12:23:27.908+01:00  INFO 11000 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-06T12:23:27.947+01:00  INFO 11000 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:23:27.966+01:00  INFO 11000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T12:23:27.978+01:00  INFO 11000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-06T12:36:38.969+01:00  INFO 11988 --- [main] c.e.newsService.NewsServiceApplication   : Starting NewsServiceApplication using Java 21.0.2 with PID 11988 (/Users/user/Desktop/social_network/target/classes started by user in /Users/user/Desktop/social_network)
+2025-02-06T12:36:38.985+01:00  INFO 11988 --- [main] c.e.newsService.NewsServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-02-06T12:36:41.199+01:00  INFO 11988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-06T12:36:41.340+01:00  INFO 11988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 4 JPA repository interfaces.
+2025-02-06T12:36:42.857+01:00  INFO 11988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-06T12:36:42.960+01:00  INFO 11988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-06T12:36:42.961+01:00  INFO 11988 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-06T12:36:43.149+01:00  INFO 11988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-06T12:36:43.149+01:00  INFO 11988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3950 ms
+2025-02-06T12:36:43.581+01:00  INFO 11988 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-06T12:36:43.702+01:00  INFO 11988 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-06T12:36:43.767+01:00  INFO 11988 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-06T12:36:44.328+01:00  INFO 11988 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-06T12:36:44.415+01:00  INFO 11988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-06T12:36:44.889+01:00  INFO 11988 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42401b81
+2025-02-06T12:36:44.891+01:00  INFO 11988 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-06T12:36:44.956+01:00  WARN 11988 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-06T12:36:44.990+01:00  INFO 11988 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-06T12:36:47.633+01:00  INFO 11988 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-06T12:36:48.452+01:00  INFO 11988 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:36:48.790+01:00  WARN 11988 --- [main] com.amazonaws.util.VersionInfoUtils      : The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.base/java.lang.Thread.getStackTrace(Thread.java:2450)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at com.example.newsService.infra.services.S3StorageServiceImpl.init(S3StorageServiceImpl.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+at com.example.newsService.NewsServiceApplication.main(NewsServiceApplication.java:12)
+2025-02-06T12:36:49.581+01:00  INFO 11988 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-06T12:36:49.735+01:00  WARN 11988 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-06T12:36:49.811+01:00  INFO 11988 --- [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-06T12:36:50.697+01:00  INFO 11988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-06T12:36:50.724+01:00  INFO 11988 --- [main] c.e.newsService.NewsServiceApplication   : Started NewsServiceApplication in 13.024 seconds (process running for 13.923)
+2025-02-06T12:36:59.220+01:00  INFO 11988 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06T12:36:59.221+01:00  INFO 11988 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-06T12:36:59.223+01:00  INFO 11988 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-06T12:36:59.273+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:36:59.273+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.app.services.ReactionService       : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:36:59.899+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:37:00.120+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.p.api.ReactionController           : Reaction deleted successfully with ID: dccb1fcf-34ac-4437-964b-572f140ed3ca
+2025-02-06T12:37:40.278+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Received request to add mediafile for post ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:37:40.405+01:00  WARN 11988 --- [http-nio-8080-exec-3] com.amazonaws.util.Base64                : JAXB is unavailable. Will fallback to SDK implementation which may be less performant.If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.
+2025-02-06T12:37:40.408+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.app.services.MediafileService      : Adding mediafile: com.example.newsService.app.DTO.MediafileDTO@543b2a9d
+2025-02-06T12:37:40.426+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaMediafileRepository         : Adding mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T12:37:40.459+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.p.api.MediafileController          : Mediafile added successfully with URL: filed13252e2-3812-4a06-a773-828beadaa4fd
+2025-02-06T12:38:13.584+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:38:13.585+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:38:13.586+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:39:45.033+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.p.api.MediafileController          : Received request to update mediafile with ID: 79191c35-0989-4f62-ba3f-a463ede62891 for post ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:39:45.035+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: 79191c35-0989-4f62-ba3f-a463ede62891
+2025-02-06T12:39:45.084+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.app.services.MediafileService      : Updating mediafile: com.example.newsService.app.DTO.MediafileDTO@5d34ebfc
+2025-02-06T12:39:45.085+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.i.r.JpaMediafileRepository         : Fetching mediafile with ID: 79191c35-0989-4f62-ba3f-a463ede62891
+2025-02-06T12:39:45.086+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.i.r.JpaMediafileRepository         : Updating mediafile: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=2025-02-06 12:37:40.445, updatedAt=Thu Feb 06 12:39:45 CET 2025}
+2025-02-06T12:39:45.113+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.p.api.MediafileController          : Mediafile updated successfully with ID: 79191c35-0989-4f62-ba3f-a463ede62891
+2025-02-06T12:40:04.878+01:00  INFO 11988 --- [http-nio-8080-exec-8] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:40:04.879+01:00  INFO 11988 --- [http-nio-8080-exec-8] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:40:04.879+01:00  INFO 11988 --- [http-nio-8080-exec-8] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:40:58.993+01:00  INFO 11988 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Received request to add reaction with description: wowoow
+2025-02-06T12:40:59.037+01:00  INFO 11988 --- [http-nio-8080-exec-9] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@bc6b90b
+2025-02-06T12:40:59.038+01:00  INFO 11988 --- [http-nio-8080-exec-9] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=wowoow)
+2025-02-06T12:40:59.072+01:00  INFO 11988 --- [http-nio-8080-exec-9] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: wowoow
+2025-02-06T12:41:10.455+01:00  INFO 11988 --- [http-nio-8080-exec-10] c.e.n.p.api.ReactionController           : Received request to add reaction with description: okay
+2025-02-06T12:41:10.471+01:00  INFO 11988 --- [http-nio-8080-exec-10] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@51ec4cd5
+2025-02-06T12:41:10.471+01:00  INFO 11988 --- [http-nio-8080-exec-10] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=okay)
+2025-02-06T12:41:10.513+01:00  INFO 11988 --- [http-nio-8080-exec-10] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: okay
+2025-02-06T12:41:14.512+01:00  INFO 11988 --- [http-nio-8080-exec-1] c.e.n.p.api.ReactionController           : Received request to add reaction with description: yes
+2025-02-06T12:41:14.527+01:00  INFO 11988 --- [http-nio-8080-exec-1] c.e.n.app.services.ReactionService       : Adding reaction: com.example.newsService.app.DTO.ReactionDTO@1366cc8f
+2025-02-06T12:41:14.527+01:00  INFO 11988 --- [http-nio-8080-exec-1] c.e.n.i.r.JpaReactionRepository          : Adding reaction: ReactionEntity(id=null, description=yes)
+2025-02-06T12:41:14.572+01:00  INFO 11988 --- [http-nio-8080-exec-1] c.e.n.p.api.ReactionController           : Reaction added successfully with URL: yes
+2025-02-06T12:41:47.921+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: yes
+2025-02-06T12:41:47.923+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: yes
+2025-02-06T12:41:48.022+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.i.r.JpaUserReactionRepository      : Adding user reaction: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T12:41:48.069+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.app.services.ReactionService       : User reaction added for post ID: 81920af6-3a58-4106-868a-26eaa0166995 with user ID: 2c140415-4e48-49c4-ba2b-709f18969251 and reaction: yes
+2025-02-06T12:41:48.069+01:00  INFO 11988 --- [http-nio-8080-exec-2] c.e.n.p.api.ReactionController           : Reply added successfully to post ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:02.208+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: wowoow
+2025-02-06T12:42:02.209+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.app.services.ReactionService       : Received request to reply to post with ID: 81920af6-3a58-4106-868a-26eaa0166995 and description: wowoow
+2025-02-06T12:42:02.215+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.i.r.JpaUserReactionRepository      : Adding user reaction: BaseEntityAudit{createdBy='null', updatedBy='null', createdAt=null, updatedAt=null}
+2025-02-06T12:42:02.260+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.app.services.ReactionService       : User reaction added for post ID: 81920af6-3a58-4106-868a-26eaa0166995 with user ID: 26f31448-7c1f-4c41-a0e2-bef4e2b23b58 and reaction: wowoow
+2025-02-06T12:42:02.260+01:00  INFO 11988 --- [http-nio-8080-exec-3] c.e.n.p.api.ReactionController           : Reply added successfully to post ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:12.544+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:12.545+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:12.545+01:00  INFO 11988 --- [http-nio-8080-exec-4] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:44.912+01:00  INFO 11988 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Received request to delete reaction with ID: 6bf69203-6d04-480b-9386-cbf6494cc7d9
+2025-02-06T12:42:44.912+01:00  INFO 11988 --- [http-nio-8080-exec-5] c.e.n.app.services.ReactionService       : Deleting reaction with ID: 6bf69203-6d04-480b-9386-cbf6494cc7d9
+2025-02-06T12:42:44.963+01:00  INFO 11988 --- [http-nio-8080-exec-5] c.e.n.i.r.JpaReactionRepository          : Deleting reaction with ID: 6bf69203-6d04-480b-9386-cbf6494cc7d9
+2025-02-06T12:42:45.030+01:00  INFO 11988 --- [http-nio-8080-exec-5] c.e.n.p.api.ReactionController           : Reaction deleted successfully with ID: 6bf69203-6d04-480b-9386-cbf6494cc7d9
+2025-02-06T12:42:56.881+01:00  INFO 11988 --- [http-nio-8080-exec-6] c.e.n.presentation.api.PostController    : Received request to get post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:56.882+01:00  INFO 11988 --- [http-nio-8080-exec-6] c.e.n.app.services.PostService           : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:42:56.882+01:00  INFO 11988 --- [http-nio-8080-exec-6] c.e.n.i.repositories.JpaPostRepository   : Fetching post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:43:15.367+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.presentation.api.PostController    : Received request to delete post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:43:15.368+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.app.services.PostService           : Deleting post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:43:15.368+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.i.repositories.JpaPostRepository   : Deleting post with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:43:15.396+01:00  INFO 11988 --- [http-nio-8080-exec-7] c.e.n.presentation.api.PostController    : Post deleted successfully with ID: 81920af6-3a58-4106-868a-26eaa0166995
+2025-02-06T12:43:29.673+01:00  INFO 11988 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-06T12:43:29.715+01:00  INFO 11988 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-06T12:43:29.728+01:00  INFO 11988 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-06T12:43:29.737+01:00  INFO 11988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-06T12:43:29.766+01:00  INFO 11988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
