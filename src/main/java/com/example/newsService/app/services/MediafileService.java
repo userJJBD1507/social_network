@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.MediafileDTO;
@@ -109,9 +111,14 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             log.error("MediafileDTO is null");
             throw new IllegalArgumentException("Mediafile cannot be null");
         }
+
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = jwt.getClaimAsString("preferred_username");
+
         log.info("Adding mediafile: {}", dto);
 
         MediafileEntity entity = mediafileMapper.toEntity(dto);
+        entity.setCreatedBy(username);
         jpaMediafileRepository.addMediafile(entity);
     }
 
@@ -160,6 +167,9 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             throw new IllegalArgumentException("Mediafile type cannot be null");
         }
         try {
+            Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String username = jwt.getClaimAsString("preferred_username");
+    
             log.info("Updating mediafile: {}", dto);
             MediafileEntity entity = mediafileMapper.toEntity(dto);
             entity.setId(id);
@@ -167,6 +177,8 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             if (existingEntity != null) {
                 entity.setCreatedAt(existingEntity.getCreatedAt());
                 entity.setUpdatedAt(new Date());
+                entity.setUpdatedBy(username);
+                entity.setCreatedBy(username);
             }
             jpaMediafileRepository.updateMediafile(entity);
         } catch (EntityNotFoundException e) {
