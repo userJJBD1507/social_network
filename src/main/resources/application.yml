@@ -73,7 +73,6 @@ spring:
             client-secret: Nx5BKM6kSRJeOfcXT2ZcmeOY6QXINPRp
             scope: openid
 
-<<<<<<< HEAD
 
 service:
   endpoint: http://localhost:9000
@@ -99,50 +98,3 @@ application:
 
 server:
   port: 8081
-=======
-server:
-  port: 8001
-
-
-#logging:
-#  file:
-#    name: logs\logger.log
-
-logging:
-  file:
-    name: logs\logger.log
-  level:
-    root: INFO
-  logback:
-    rollingpolicy:
-      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
-      max-history: 30
-      total-size-cap: 1GB
-    appenders:
-      - type: "net"
-        name: "LOGSTASH"
-        remoteHost: "logstash"
-        port: 5044
-        encoder:
-          pattern: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
-
-  servlet:
-    multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
-
-
-
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/postgres
-#    username: postgres
-#    password: postgres
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
-#    hibernate:
-#      ddl-auto: update
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732

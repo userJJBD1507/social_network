@@ -2,7 +2,6 @@ package com.example.newsService.presentation.api;
 
 import com.example.newsService.app.DTO.ReactionDTO;
 import com.example.newsService.app.services.ReactionService;
-<<<<<<< HEAD
 import com.example.newsService.core.S3StorageService;
 import com.example.newsService.infra.services.S3StorageServiceImpl;
 
@@ -10,10 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
-=======
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,12 +23,8 @@ import java.util.UUID;
 public class ReactionController {
 
     private final ReactionService reactionService;
-<<<<<<< HEAD
     @Autowired
     private S3StorageServiceImpl s3StorageService;
-=======
-
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
     @PostMapping("/add")
     public ResponseEntity<Void> addReaction(@RequestParam("description") String description,
                                             @RequestParam("file") MultipartFile multipartFile) {
@@ -41,11 +32,7 @@ public class ReactionController {
 
         try {
 
-<<<<<<< HEAD
             String fileUrl = s3StorageService.uploadFileWithExistingFilename(multipartFile, description);
-=======
-            String fileUrl = "mock-url"; // Метод сохранения файла
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 
             ReactionDTO reactionDTO = new ReactionDTO();
             reactionDTO.setDescription(description);

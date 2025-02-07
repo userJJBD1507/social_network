@@ -2,24 +2,17 @@ package com.example.newsService.presentation.api;
 
 import com.example.newsService.app.DTO.MediafileDTO;
 import com.example.newsService.app.services.MediafileService;
-<<<<<<< HEAD
 import com.example.newsService.core.S3StorageService;
 import com.example.newsService.core.mediafile.entities.MediafileEntity;
 import com.example.newsService.core.utils.MediaFileType;
 import com.example.newsService.infra.repositories.JpaMediafileRepository;
 import com.example.newsService.infra.services.S3StorageServiceImpl;
-=======
-import com.example.newsService.core.utils.MediaFileType;
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
-=======
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -102,24 +95,15 @@ import java.util.UUID;
 public class MediafileController {
 
     private final MediafileService mediafileService;
-<<<<<<< HEAD
     @Autowired
     private S3StorageServiceImpl s3StorageService;
     private final JpaMediafileRepository jpaMediafileRepository;
-=======
-
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
     @PostMapping("/add")
     public ResponseEntity<Void> addMediafile(@RequestPart("file") MultipartFile file,
                                              @RequestParam("postId") String postId) {
         log.info("Received request to add mediafile for post ID: {}", postId);
 
-<<<<<<< HEAD
         String generatedUrl = s3StorageService.upload(file);
-=======
-        // Генерация URL (заглушка)
-        String generatedUrl = "http://example.com/media/" + file.getOriginalFilename();
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 
         MediafileDTO mediafileDTO = MediafileDTO.builder()
                 .type(file.getContentType().equals("image/jpeg") ? MediaFileType.PHOTO : MediaFileType.VIDEO)
@@ -151,7 +135,6 @@ public class MediafileController {
     @PutMapping("/update")
     public ResponseEntity<Void> updateMediafile(@RequestPart("file") MultipartFile file,
                                                 @RequestParam("postId") String postId,
-<<<<<<< HEAD
                                                 @RequestParam("id") UUID id) throws Exception {
         log.info("Received request to update mediafile with ID: {} for post ID: {}", id, postId);
 
@@ -162,17 +145,6 @@ public class MediafileController {
         MediafileDTO mediafileDTO = MediafileDTO.builder()
                 .type(file.getContentType().equals("image/jpeg") ? MediaFileType.PHOTO : MediaFileType.VIDEO)
                 .url(mediafileEntity.getUrl())
-=======
-                                                @RequestParam("id") UUID id) {
-        log.info("Received request to update mediafile with ID: {} for post ID: {}", id, postId);
-
-        // Генерация нового URL для файла
-        String generatedUrl = "http://example.com/media/" + file.getOriginalFilename();
-
-        MediafileDTO mediafileDTO = MediafileDTO.builder()
-                .type(file.getContentType().equals("image/jpeg") ? MediaFileType.PHOTO : MediaFileType.VIDEO)
-                .url(generatedUrl)
->>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
                 .postId(UUID.fromString(postId))
                 .id(id)
                 .build();
