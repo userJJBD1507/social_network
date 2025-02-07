@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.MediafileDTO;
@@ -13,6 +15,7 @@ import com.example.newsService.app.mappers.MediafileMapper;
 import com.example.newsService.core.MediafileCrud;
 import com.example.newsService.core.mediafile.entities.MediafileEntity;
 import com.example.newsService.infra.repositories.JpaMediafileRepository;
+import com.example.newsService.infra.services.S3StorageServiceImpl;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -98,7 +101,8 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
     private final JpaMediafileRepository jpaMediafileRepository;
 
     private final MediafileMapper mediafileMapper;
-
+    @Autowired
+    private S3StorageServiceImpl s3StorageService;
     @Override
     public void add(MediafileDTO dto) {
         if (dto == null) {
@@ -119,7 +123,10 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         }
         try {
             log.info("Deleting mediafile with ID: {}", id);
+            String filenameOfMediaFile = jpaMediafileRepository.getMediafile(id).getUrl();
             jpaMediafileRepository.deleteMediafile(id);
+            
+            s3StorageService.delete(filenameOfMediaFile);
         } catch (EntityNotFoundException e) {
             log.error("Mediafile not found with ID: {}", id);
             throw e;
@@ -134,7 +141,6 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         }
         try {
             log.info("Fetching mediafile with ID: {}", id);
-            // MediafileEntity mediafile = jpaMediafileRepository.getPost(id);
             MediafileEntity mediafile = jpaMediafileRepository.getMediafile(id);
             return Optional.of(mediafileMapper.toDTO(mediafile));
         } catch (EntityNotFoundException e) {

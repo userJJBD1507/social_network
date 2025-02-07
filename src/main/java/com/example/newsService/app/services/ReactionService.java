@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.ReactionDTO;
@@ -14,8 +16,10 @@ import com.example.newsService.core.reaction.entities.ReactionEntity;
 import com.example.newsService.core.reaction.entities.UserReactionEntity;
 import com.example.newsService.core.repositories.entity.EntityPostRepository;
 import com.example.newsService.core.repositories.entity.EntityReactionRepository;
+import com.example.newsService.core.repositories.entity.EntityUserReactionRepository;
 import com.example.newsService.infra.repositories.JpaReactionRepository;
 import com.example.newsService.infra.repositories.JpaUserReactionRepository;
+import com.example.newsService.infra.services.S3StorageServiceImpl;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -32,6 +36,11 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
     private final EntityPostRepository entityPostRepository;
 
     private final JpaUserReactionRepository jpaUserReactionRepository;
+
+    @Autowired
+    private EntityUserReactionRepository userReactionRepository;
+    @Autowired
+    private S3StorageServiceImpl s3StorageService;
 
     @Override
     public void add(ReactionDTO dto) {
@@ -56,7 +65,13 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
 
         try {
             log.info("Deleting reaction with ID: {}", id);
+
+            String fileReactionName = entityReactionRepository.findById(id).get().getUrl();
+
+            userReactionRepository.delete(id);
             jpaReactionRepository.deleteReaction(reaction);
+
+            s3StorageService.delete(fileReactionName);
         } catch (EntityNotFoundException e) {
             log.error("Reaction not found with ID: {}", id);
             throw e;
@@ -92,7 +107,7 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         UserReactionEntity userReaction = new UserReactionEntity();
         userReaction.setPost(postEntity);
 
-        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
+        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя) 
         UUID randomUserId = UUID.randomUUID();
         userReaction.setUserId(randomUserId);
         userReaction.setReaction(reactionEntity);
