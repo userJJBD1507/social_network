@@ -1,18 +1,100 @@
-spring:
-  application:
-    name: news-service
+# spring:
+#   application:
+#     name: news-service
 
+#   datasource:
+#     driver-class-name: org.postgresql.Driver
+#     username: postgres
+#     password: postgres
+#     url: jdbc:postgresql://localhost:5432/postgres
+
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+
+# server:
+#   port: 8001
+
+
+#logging:
+#  file:
+#    name: logs\logger.log
+
+logging:
+  file:
+    name: logs\logger.log
+  level:
+    root: INFO
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+      max-history: 30
+      total-size-cap: 1GB
+    appenders:
+      - type: "net"
+        name: "LOGSTASH"
+        remoteHost: "logstash"
+        port: 5044
+        encoder:
+          pattern: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+
+
+spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
-
+    driver-class-name: org.postgresql.Driver
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/eselpo
+      client:
+        provider:
+          keycloak:
+            user-name-attribute: preferred_username
+            issuer-uri: http://localhost:8080/realms/eselpo
+        registration:
+          keycloak:
+            client-id: springsecurity
+            client-secret: Nx5BKM6kSRJeOfcXT2ZcmeOY6QXINPRp
+            scope: openid
 
 
+service:
+  endpoint: http://localhost:9000
+region:
+  name: us-east-1
+access:
+  key: admin
+secret:
+  key: admin1234
+bucket:
+  name: miniobucket
+
+
+keycloak:
+  server:
+    url: http://localhost:8080
+  username: admin
+  password: admin
+
+
+application:
+  url: http://localhost:8081
 
 server:
-  port:8001
+  port: 8081

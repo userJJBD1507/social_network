@@ -9,7 +9,7 @@ public interface MediafileRepository {
 
     void addMediafile(MediafileEntity post);
 
-    MediafileEntity getPost(UUID id);
+    MediafileEntity getMediafile(UUID id);
 
     void updateMediafile(MediafileEntity post);
 
