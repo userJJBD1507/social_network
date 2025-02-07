@@ -46,17 +46,33 @@ logging:
 
 
 spring:
- datasource:
-   url: jdbc:postgresql://localhost:5432/postgres
-   username: postgres
-   password: postgres
-   driver-class-name: org.postgresql.Driver
- jpa:
-   properties:
-     hibernate:
-       dialect: org.hibernate.dialect.PostgreSQLDialect
-   hibernate:
-     ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/eselpo
+      client:
+        provider:
+          keycloak:
+            user-name-attribute: preferred_username
+            issuer-uri: http://localhost:8080/realms/eselpo
+        registration:
+          keycloak:
+            client-id: springsecurity
+            client-secret: Nx5BKM6kSRJeOfcXT2ZcmeOY6QXINPRp
+            scope: openid
+
 
 service:
   endpoint: http://localhost:9000
@@ -68,3 +84,17 @@ secret:
   key: admin1234
 bucket:
   name: miniobucket
+
+
+keycloak:
+  server:
+    url: http://localhost:8080
+  username: admin
+  password: admin
+
+
+application:
+  url: http://localhost:8081
+
+server:
+  port: 8081

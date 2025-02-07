@@ -5,6 +5,9 @@ import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.PostDTO;
@@ -12,8 +15,12 @@ import com.example.newsService.app.mappers.PostMapper;
 import com.example.newsService.core.CrudService;
 import com.example.newsService.core.post.entities.PostEntity;
 import com.example.newsService.infra.repositories.JpaPostRepository;
+import com.example.newsService.infra.services.KeycloakService;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
+
 
 @Service
 @RequiredArgsConstructor
@@ -25,15 +32,26 @@ public class PostService implements CrudService<PostDTO, UUID> {
 
 
     private final PostMapper postMapper;
-
+    @Autowired
+    private KeycloakService keycloakService;
     @Override
     public PostDTO add(PostDTO dto) {
         if (dto == null) {
             log.error("PostDTO is null");
             throw new IllegalArgumentException("PostDTO cannot be null");
         }
+
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = jwt.getClaimAsString("preferred_username");
+        String userKeycloakId = keycloakService.getUserIdByUsername(username);
+        UUID userUuid = UUID.fromString(userKeycloakId);
+        
+        dto.setUserId(userUuid);
+
         log.info("Adding post with title: {}", dto.getTitle());
         PostEntity entity = postMapper.toEntity(dto);
+
+        entity.setCreatedBy(username);
         jpaPostRepository.addPost(entity);
         return postMapper.toDto(entity);
     }
@@ -79,17 +97,20 @@ public class PostService implements CrudService<PostDTO, UUID> {
             log.error("PostDTO userId is null");
             throw new IllegalArgumentException("UserId cannot be null");
         }
+
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = jwt.getClaimAsString("preferred_username");
+        String userKeycloakId = keycloakService.getUserIdByUsername(username);
+        UUID userUuid = UUID.fromString(userKeycloakId);
+
         log.info("Updating post with title: {}", dto.getTitle());
-        // PostEntity entity = postMapper.toEntity(dto);
-        // entity.setId(id);
         PostEntity existingEntity = jpaPostRepository.getPost(id);
         if (existingEntity != null) {
             existingEntity.setTitle(dto.getTitle());
             existingEntity.setContent(dto.getContent());
             existingEntity.setPrivate(dto.isPrivate());
-            existingEntity.setUserId(dto.getUserId());
-            // entity.setCreatedAt(existingEntity.getCreatedAt());
-            // entity.setUpdatedAt(new Date());
+            existingEntity.setUserId(userUuid);
+            existingEntity.setUpdatedBy(username);
         }
         jpaPostRepository.updatePost(existingEntity);
         return postMapper.toDto(existingEntity);

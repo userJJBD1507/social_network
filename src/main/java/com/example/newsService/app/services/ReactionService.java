@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.ReactionDTO;
@@ -48,9 +50,14 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
             log.error("ReactionDTO is null");
             throw new IllegalArgumentException("Reaction cannot be null");
         }
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = jwt.getClaimAsString("preferred_username");
+
+
         log.info("Adding reaction: {}", dto);
 
         ReactionEntity entity = reactionMapper.toEntity(dto);
+        entity.setCreatedBy(username);
         jpaReactionRepository.addReaction(entity);
     }
 
@@ -107,13 +114,12 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         UserReactionEntity userReaction = new UserReactionEntity();
         userReaction.setPost(postEntity);
 
-        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя) 
-        UUID randomUserId = UUID.randomUUID();
-        userReaction.setUserId(randomUserId);
+
+        userReaction.setUserId(postEntity.getUserId());
         userReaction.setReaction(reactionEntity);
 
         jpaUserReactionRepository.addUserReaction(userReaction);
-        log.info("User reaction added for post ID: {} with user ID: {} and reaction: {}", postId, randomUserId, description);
+        log.info("User reaction added for post ID: {} with user ID: {} and reaction: {}", postId, postEntity.getUserId(), description);
     }
 
 }
