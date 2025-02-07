@@ -4,10 +4,13 @@ import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.ReactionDTO;
@@ -18,10 +21,15 @@ import com.example.newsService.core.reaction.entities.ReactionEntity;
 import com.example.newsService.core.reaction.entities.UserReactionEntity;
 import com.example.newsService.core.repositories.entity.EntityPostRepository;
 import com.example.newsService.core.repositories.entity.EntityReactionRepository;
+<<<<<<< HEAD
 import com.example.newsService.core.repositories.entity.EntityUserReactionRepository;
 import com.example.newsService.infra.repositories.JpaReactionRepository;
 import com.example.newsService.infra.repositories.JpaUserReactionRepository;
 import com.example.newsService.infra.services.S3StorageServiceImpl;
+=======
+import com.example.newsService.infra.repositories.JpaReactionRepository;
+import com.example.newsService.infra.repositories.JpaUserReactionRepository;
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -39,17 +47,21 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
 
     private final JpaUserReactionRepository jpaUserReactionRepository;
 
+<<<<<<< HEAD
     @Autowired
     private EntityUserReactionRepository userReactionRepository;
     @Autowired
     private S3StorageServiceImpl s3StorageService;
 
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
     @Override
     public void add(ReactionDTO dto) {
         if (dto == null) {
             log.error("ReactionDTO is null");
             throw new IllegalArgumentException("Reaction cannot be null");
         }
+<<<<<<< HEAD
         Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = jwt.getClaimAsString("preferred_username");
 
@@ -58,6 +70,11 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
 
         ReactionEntity entity = reactionMapper.toEntity(dto);
         entity.setCreatedBy(username);
+=======
+        log.info("Adding reaction: {}", dto);
+
+        ReactionEntity entity = reactionMapper.toEntity(dto);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
         jpaReactionRepository.addReaction(entity);
     }
 
@@ -72,6 +89,7 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
 
         try {
             log.info("Deleting reaction with ID: {}", id);
+<<<<<<< HEAD
 
             String fileReactionName = entityReactionRepository.findById(id).get().getUrl();
 
@@ -79,6 +97,9 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
             jpaReactionRepository.deleteReaction(reaction);
 
             s3StorageService.delete(fileReactionName);
+=======
+            jpaReactionRepository.deleteReaction(reaction);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
         } catch (EntityNotFoundException e) {
             log.error("Reaction not found with ID: {}", id);
             throw e;
@@ -114,12 +135,22 @@ public class ReactionService implements ReactionsCrud<ReactionEntity, UUID> {
         UserReactionEntity userReaction = new UserReactionEntity();
         userReaction.setPost(postEntity);
 
+<<<<<<< HEAD
 
         userReaction.setUserId(postEntity.getUserId());
         userReaction.setReaction(reactionEntity);
 
         jpaUserReactionRepository.addUserReaction(userReaction);
         log.info("User reaction added for post ID: {} with user ID: {} and reaction: {}", postId, postEntity.getUserId(), description);
+=======
+        // РАНДОМНЫЙ userId (Исправить, чтобы был id конкретного пользователя)
+        UUID randomUserId = UUID.randomUUID();
+        userReaction.setUserId(randomUserId);
+        userReaction.setReaction(reactionEntity);
+
+        jpaUserReactionRepository.addUserReaction(userReaction);
+        log.info("User reaction added for post ID: {} with user ID: {} and reaction: {}", postId, randomUserId, description);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
     }
 
 }

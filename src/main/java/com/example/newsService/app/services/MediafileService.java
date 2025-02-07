@@ -6,10 +6,13 @@ import java.util.UUID;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 import org.springframework.stereotype.Service;
 
 import com.example.newsService.app.DTO.MediafileDTO;
@@ -17,7 +20,10 @@ import com.example.newsService.app.mappers.MediafileMapper;
 import com.example.newsService.core.MediafileCrud;
 import com.example.newsService.core.mediafile.entities.MediafileEntity;
 import com.example.newsService.infra.repositories.JpaMediafileRepository;
+<<<<<<< HEAD
 import com.example.newsService.infra.services.S3StorageServiceImpl;
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -103,14 +109,19 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
     private final JpaMediafileRepository jpaMediafileRepository;
 
     private final MediafileMapper mediafileMapper;
+<<<<<<< HEAD
     @Autowired
     private S3StorageServiceImpl s3StorageService;
+=======
+
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
     @Override
     public void add(MediafileDTO dto) {
         if (dto == null) {
             log.error("MediafileDTO is null");
             throw new IllegalArgumentException("Mediafile cannot be null");
         }
+<<<<<<< HEAD
 
         Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = jwt.getClaimAsString("preferred_username");
@@ -119,6 +130,11 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
 
         MediafileEntity entity = mediafileMapper.toEntity(dto);
         entity.setCreatedBy(username);
+=======
+        log.info("Adding mediafile: {}", dto);
+
+        MediafileEntity entity = mediafileMapper.toEntity(dto);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
         jpaMediafileRepository.addMediafile(entity);
     }
 
@@ -130,10 +146,14 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         }
         try {
             log.info("Deleting mediafile with ID: {}", id);
+<<<<<<< HEAD
             String filenameOfMediaFile = jpaMediafileRepository.getMediafile(id).getUrl();
             jpaMediafileRepository.deleteMediafile(id);
             
             s3StorageService.delete(filenameOfMediaFile);
+=======
+            jpaMediafileRepository.deleteMediafile(id);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
         } catch (EntityNotFoundException e) {
             log.error("Mediafile not found with ID: {}", id);
             throw e;
@@ -148,6 +168,10 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
         }
         try {
             log.info("Fetching mediafile with ID: {}", id);
+<<<<<<< HEAD
+=======
+            // MediafileEntity mediafile = jpaMediafileRepository.getPost(id);
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
             MediafileEntity mediafile = jpaMediafileRepository.getMediafile(id);
             return Optional.of(mediafileMapper.toDTO(mediafile));
         } catch (EntityNotFoundException e) {
@@ -167,9 +191,12 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             throw new IllegalArgumentException("Mediafile type cannot be null");
         }
         try {
+<<<<<<< HEAD
             Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             String username = jwt.getClaimAsString("preferred_username");
     
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
             log.info("Updating mediafile: {}", dto);
             MediafileEntity entity = mediafileMapper.toEntity(dto);
             entity.setId(id);
@@ -177,8 +204,11 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             if (existingEntity != null) {
                 entity.setCreatedAt(existingEntity.getCreatedAt());
                 entity.setUpdatedAt(new Date());
+<<<<<<< HEAD
                 entity.setUpdatedBy(username);
                 entity.setCreatedBy(username);
+=======
+>>>>>>> a6b5e9255c615854e7d1d1469838473ef4a9d732
             }
             jpaMediafileRepository.updateMediafile(entity);
         } catch (EntityNotFoundException e) {
