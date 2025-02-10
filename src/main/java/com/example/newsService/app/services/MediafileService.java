@@ -177,8 +177,9 @@ public class MediafileService implements MediafileCrud<MediafileDTO, UUID> {
             if (existingEntity != null) {
                 entity.setCreatedAt(existingEntity.getCreatedAt());
                 entity.setUpdatedAt(new Date());
+                entity.setCreatedBy(existingEntity.getCreatedBy());
+                System.out.println("CREATED BY " + existingEntity.getCreatedBy());
                 entity.setUpdatedBy(username);
-                entity.setCreatedBy(username);
             }
             jpaMediafileRepository.updateMediafile(entity);
         } catch (EntityNotFoundException e) {
