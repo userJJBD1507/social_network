@@ -22,8 +22,8 @@ public class PostMapper {
                 .id(entity.getId())
                 .title(entity.getTitle())
                 .content(entity.getContent())
-                .likeQuantity(entity.getLikeQuantity())
-                .commentQuantity(entity.getCommentQuantity())
+                // .likeQuantity(entity.getLikeQuantity())
+                // .commentQuantity(entity.getCommentQuantity())
                 .isPrivate(entity.isPrivate())
                 .userId(entity.getUserId())
                 .createdAt(new java.sql.Date(entity.getCreatedAt().getTime()))
@@ -51,8 +51,8 @@ public class PostMapper {
         PostEntity entity = new PostEntity();
         entity.setTitle(dto.getTitle());
         entity.setContent(dto.getContent());
-        entity.setLikeQuantity(dto.getLikeQuantity());
-        entity.setCommentQuantity(dto.getCommentQuantity());
+        // entity.setLikeQuantity(dto.getLikeQuantity());
+        // entity.setCommentQuantity(dto.getCommentQuantity());
         entity.setPrivate(dto.isPrivate());
         entity.setUserId(dto.getUserId());
         entity.setCreatedAt(dto.getCreatedAt());

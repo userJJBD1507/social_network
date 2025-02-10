@@ -93,10 +93,6 @@ public class PostService implements CrudService<PostDTO, UUID> {
             log.error("PostDTO is null");
             throw new IllegalArgumentException("PostDTO cannot be null");
         }
-        if (dto.getUserId() == null) {
-            log.error("PostDTO userId is null");
-            throw new IllegalArgumentException("UserId cannot be null");
-        }
 
         Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = jwt.getClaimAsString("preferred_username");
@@ -122,11 +118,20 @@ public class PostService implements CrudService<PostDTO, UUID> {
             log.error("PostDTO is null");
             throw new IllegalArgumentException("PostDTO cannot be null");
         }
+
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = jwt.getClaimAsString("preferred_username");
+        String userKeycloakId = keycloakService.getUserIdByUsername(username);
+        UUID userUuid = UUID.fromString(userKeycloakId);
+
+        dto.setUserId(userUuid);
+        
         log.info("Adding post with title: {}", dto.getTitle());
         PostEntity parentPost = jpaPostRepository.getPost(parentPostId);
 
         PostEntity entity = postMapper.toEntity(dto);
         entity.setParentPost(parentPost);
+        entity.setCreatedBy(username);
         jpaPostRepository.addPost(entity);
         return postMapper.toDto(entity);
     }
