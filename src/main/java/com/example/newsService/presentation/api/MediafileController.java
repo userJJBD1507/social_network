@@ -185,13 +185,13 @@ import java.util.UUID;
 
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/mediafiles")
 @Slf4j
 public class MediafileController {
-
-    private final MediafileService mediafileService;
-    private final JpaMediafileRepository jpaMediafileRepository;
+    @Autowired
+    private MediafileService mediafileService;
+    @Autowired
+    private JpaMediafileRepository jpaMediafileRepository;
     @Autowired
     private EntityMediafileRepository entityMediafileRepository;
     

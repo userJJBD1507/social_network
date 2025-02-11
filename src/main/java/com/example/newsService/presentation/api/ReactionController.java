@@ -18,11 +18,10 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/reaction")
-@RequiredArgsConstructor
 @Slf4j
 public class ReactionController {
-
-    private final ReactionService reactionService;
+    @Autowired
+    private ReactionService reactionService;
     @Autowired
     private S3StorageServiceImpl s3StorageService;
     @PostMapping("/add")

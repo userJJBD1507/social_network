@@ -7,6 +7,8 @@ import com.example.newsService.core.repositories.entity.EntityPostRepository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -74,12 +76,12 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/post")
-@RequiredArgsConstructor
 @Slf4j
 public class PostController {
-
-    private final PostService postService;
-    private final EntityPostRepository postRepository;
+    @Autowired
+    private PostService postService;
+    @Autowired
+    private EntityPostRepository postRepository;
 
     @PostMapping("/create")
     public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO) {
